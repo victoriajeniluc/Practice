@@ -12,3 +12,8 @@
 
 #------------------------------------
 
+def take(array, n)
+	array[n, array.length]
+end 
+
+puts take([1,2,3], 1)
