@@ -16,4 +16,5 @@ def take(array, n)
 	array[n, array.length]
 end 
 
+puts take("Hello", 1)
 puts take([1,2,3], 1)
