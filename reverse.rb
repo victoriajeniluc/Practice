@@ -13,7 +13,6 @@
 	# Turn the array back into a string 
 # -----------------------
 
-class Reverse 
 	def split_string(string)
 	  string.split("")
 	end
@@ -32,4 +31,3 @@ class Reverse
 	def print_reverse_string(string)
 	  puts join_string(string)
 	end  
-end 
