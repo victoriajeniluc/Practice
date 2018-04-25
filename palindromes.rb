@@ -11,27 +11,46 @@
 	# Else 
 		# Not Palindrome 
 # -------------------------------------------
-
 def checks_class(element)
-	element.class == String 
-end 
-
-def gets_rid_of_spaces(element)
-	if element.include?(" ")
-		element.delete(" ")
+	if element.class == String
+		true 
 	else 
-		element 
+		"Please enter in a word or a phrase"
 	end 
 end 
 
+
+def gets_rid_of_spaces_punctuation(element)
+	if checks_class(element) 
+		if element.match(/\W/)
+			element.gsub!(/\W/, "")
+		else 
+			element 
+		end 
+		element 
+	end  
+	element
+end 
+
 def downcases_element(element)
-	gets_rid_of_spaces(element).downcase
+	gets_rid_of_spaces_punctuation(element).downcase
+end 
+
+def reverses_element(element)
+	reverse_word = ""
+	i = element.length - 1 
+	until i < 0  
+		reverse_word << downcases_element(element)[i]
+		i -= 1 
+	end 
+	reverse_word
 end 
 
 def checks_palindrome(element)
-	if checks_class(element)
-		 downcases_element(element)
-	else
-		"Please enter in a word or a phrase"
-	end  
-end 
+	i = 0 
+		until i > downcases_element(element).length 
+			return false if downcases_element(element)[i] != reverses_element(element)[i]
+			i += 1
+		end
+	return true 
+end
