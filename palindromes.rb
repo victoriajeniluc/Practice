@@ -19,7 +19,6 @@ def checks_class(element)
 	end 
 end 
 
-
 def gets_rid_of_spaces_punctuation(element)
 	if checks_class(element) 
 		if element.match(/\W/)
