@@ -86,6 +86,33 @@
 				# returning output 
 					# A method's output is referred to as "return value"
 
+		# DEFINING A METHOD 
+			#EXAMPLE
+				def add_two(number)
+					number + 1 
+				end 
+
+				# This only defines a method 
+				# Ruby reads the code on the top.. finds def (meaning that we are defining a method)
+				# Methods need names.. so Ruby will be looking at that next 
+				# Since inputs are optional... it can find parenthese which means that the method defined can have a list of things given. 
+					# An argument list defines names of objects passed to the method, enclosed by parenthese right after the method name 
+				# Method body is the area with number + 1... inside the method body the argumetns are known as local variables. 
+
+		# CALL A METHOD 
+			# Ask Ruby to execute the code that the method body has with some give arguments(inputs)
+			#EXAMPLE 
+				def add_two(number)
+					number + 2 
+				end 
+
+				puts add_two(3)
+
+				# Ruby will look at the bit add_two(3) first. Ruby will recognize that we are referring to a method defined earlier, and this will tell Ruby that we want to call (execute, use) this method.
+				
+				# In order to do so, Ruby first needs to look at what’s inside the parantheses () so Ruby can pass it on. Ruby finds the 3 and creates a new object (number) for it.
+
+				# Now Ruby is ready to actually call (execute, use) the method, passing the number 3.
  	#-----------------------------
 
 
