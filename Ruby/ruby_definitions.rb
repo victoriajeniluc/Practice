@@ -55,6 +55,16 @@
 		# => Reality: classes hold data, have methods that interact with the data, and are used to instantiate objects 
 		# => USE CAMELCASE NAMING CONVENTION TO CREATE A CLASS 
 	#-----------------------------
+
+	# STATES AND BEHAVIOR 
+		# When defining a class ... we focus on: state and behavior 
+			# state: track attibutes for individual objects 
+			# behavior: what objects are capable of doing 
+
+		# Instance variables keep track of state of the object (the attributes of the individual obects)
+
+		# Instance methods expose behavior for those objects. 
+
 	# Objects have methods 
 		# Methods are an object's behavior 
 			# AKA "An object's methods are things that the object can do"
