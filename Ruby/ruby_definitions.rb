@@ -163,6 +163,204 @@
 		# Scopes 
 			# Names are known (or defined) in a certain scope, and unknown(or undefined) outside of this scope.
 				# Certain names, like variable names, are "known" and "visible" inside of the room. 
+
+ 	#-----------------------------
+ 		# Initializing a New Object 
+ 			# Initializing method: 
+ 				# => called everytime you create a new object. 
+				# We refer to the initialize method as a constructor because it gets called everytime a new object is created 
+
+		# Instance variables 
+			#EXAMPLE
+			#Class GoodDog
+			  #def initialize(name)
+			    #@name = name 
+		  	#end 
+			#end 
+
+		#sparky = GoodDog.new(“Sparky”) 
+
+		# ^^^ The initialize method takes an parameter called name. You can pass arguments through the initialize method through the new method. @name is an instance variable. 
+		# ^^^ The string Sparky is being passed as an argument from the new method and through the initialize method. It assigned to a local variable named sparky. 
+
+		# The instance variable exists as long as the object exists; one of the ways were Ruby ties data to objects. 
+		
+		# Every instance variable is unique; instance variables are how we keep track. 
+
+		# Instance methods 
+  	#EXAMPLE 
+			Class GoodDog 
+		    def initialize(name)
+		      @name = name 
+		    end 
+
+		    def speak 
+		      "#{@name} says ARF!"
+		    end 
+			end 
+
+			sparky = GoodDog.new(“Sparky”)
+			sparky.speak 
+
+			# ^^^ What we are doing here is basically creating an instance method for our object to perform a behavior.. Which is to speak. In speak, we interpolated the instance variable (name) to change our instance method.  
+
+
+			# Accessor Method 
+
+			#PROBLEM
+			# What if we want to print sparky's name? 
+				# So, we will get a "NoMethodError: undefined method 'name' for #<GoodDog..>" because we are trying to call a method that doesn't exist or is unavailable to the object. 
+				# We have to create a method that will return the name... let's call it get_name and it's only job is to return the value in the @name instance variable. (example of a getter method)
+
+				#EXAMPLE OF WRITING A GETTER METHOD 
+				#good_dog.rb
+
+				class GoodDog
+					def initialize(name)
+						@name = name 
+					end 
+
+					def get_name 
+						@name 
+					end 
+
+					def speak 
+						"#{@name} says arf!"
+					end 
+				end 
+
+				sparky = GoodDog.new("Sparky")
+				puts sparky.speak 
+				puts sparky.get_name 
+				# => Sparky says arf!
+
+				#Problem 
+					#What if we want to change the name given? 
+
+					# THIS IS WHAT IS CALLED A SETTER METHOD 
+
+				class GoodDog
+					def initiaize(name)
+						@name = name 
+					end 
+
+					def name
+						@name 
+					end
+
+					def name=(name)
+						@name = name 
+					end  
+
+					def speak 
+						"#{@name} says arf!"
+					end 
+				end  
+				sparky = GoodDog.new("Sparky")
+				puts sparky.speak # => Sparky says arf!
+				puts sparky.name # => Sparky
+				sparky.set_name = "Spartacus"
+				puts sparky.name # => Spartacus 
+
+				# ^^^ We've successfully changed sparky's name to string Spartacus. 
+				# "name=" is the method name, and the sting "Spartacus" is the argument being passed in the method. Ruby noticies this is a setter method and allows us to use the more natural assignment syntax: sparky.name = "Spartacus"
+
+				# SHORTCUTS TO SETTER AND GETTER METHODS 
+
+				class GoodDog
+					attr_reader :name, attr_writer :name #OR attr_accessor that does both 
+
+					def initiaize(name)
+						@name = name 
+					end 
+
+					def speak 
+						"#{@name} says arf!"
+					end 
+				end 
+
+				sparky = GoodDog.new("Sparky")
+				puts sparky.speak # => Sparky says arf!
+				puts sparky.name # => Sparky
+				sparky.set_name = "Spartacus"
+				puts sparky.name # => Spartacus 
+
+				# The attr_accessor takes a symbol as an argument, which it uses to create the method for the getter and the setter.
+
+				#attr_reader == getter method 
+				#attr_writer == setter method 
+
+				#EXAMPLE OF MJULTPLE OF STATES TRACKING 
+					#attr_accessor :name, :weight, :height 
+
+		# PROBLEM... 
+			# CAN WE CHANGE THE SPEAK METHOD? 
+			# YES!! 
+
+			class GoodDog
+				attr_accessor :name 
+
+				def initiaize(name)
+					@name = name 
+				end 
+
+				def speak 
+					"#{name} says arf!"
+				end 
+			end 
+
+				sparky = GoodDog.new("Sparky")
+				puts sparky.speak # => Sparky says arf!
+				puts sparky.name # => Sparky
+				sparky.set_name = "Spartacus"
+				puts sparky.name # => Spartacus 
+
+				# ^^^ Why take away the @ sign from the name in the speak method? Well... we're now calling the instance method rather than the instance variable. 
+
+				# Why do this? Well, you can reference the instance varaible but it's generally a good idea to call the getter method instead. 
+					#Any example is tracking social security numbers in an instance variable called @ssn. Suppose that we don't want to expose raw data... and only want the last four digits. If we reference th instance variable directly, we'll need to sprink the entire class with code like this: 
+						# 'xxx-xx-' + @ssn.split('-').last 
+
+				# BUT WHAT IF WE FIND A BIG OR IF SOMEONE SAYS WE NEED TO CHANGE THE FORMAT? It's much easier to just reference a getter method, and make the change in one place 
+					#def ssn 
+						#converts '123-45-6789' to 'xxx-xx-6789'
+						#'xxx-xx-'.@ssn.split('-').last
+					#end 
+
+				# WHY DOESN'T SETTER METHODS WORK LIKE GETTER METHODS... 
+					# sometimes Ruby thinks that we are trying to access local variables insead. So you will have to use self... to refer that we are referencing we're calling the setter method
+
+				class GoodDog
+					attr_accessor :name 
+
+					def initiaize(n,h,w)
+						@name = n
+						@height = h 
+						@weight = w  
+					end 
+
+					def speak 
+						"#{self.name} says arf!"
+					end 
+
+					def change_info(n,h,w)
+						self.name = n
+						self.height = h 
+						self.weight = w 
+					end 
+
+					#using self to stay consistant! 
+					def info 
+						"#{self.name} weighs #{self.weight} and is #{self.height} tall"
+					end 
+				end 
+
+				sparky = GoodDog.new("Sparky", "12 inches", "10lbs")
+				puts sparky.info # Sparky weighs 10lbs and is 12 inches tall 
+
+				sparky.change.info("Spartacus", "24 inches", "45lbs")
+				puts sparky.info # Spartacus weighs 45lbs and is 24 inches tall 
+
  	#-----------------------------
 
  		#EXAMPLE OF CLASS 
