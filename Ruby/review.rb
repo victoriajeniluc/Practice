@@ -26,6 +26,10 @@
 
 		#	You want to create a nice interface that allows you to accurately describe the action you want your program to perform. Create a method called spray_paint that can be called on an object and will modify the color of the car.
 
+		# Add a class method to your MyCar class that calculates the gas mileage of any car.
+
+		# Override the to_s method to create a user friendly print out of your object.
+
 			class MyCar
 				attr_accessor :current_speed
 				attr_accessor :color
@@ -48,6 +52,10 @@
 					puts "You push the brake and decelerate #{number} mph." 
 				end 
 
+				def self.gas_mileage(gallons, miles)
+					puts "#{miles / gallons} miles per gallon of gas"
+				end 
+
 				def shut_down 
 					self.current_speed = 0
 					puts "Let's park this bad boy!" 
@@ -60,6 +68,10 @@
 				def spray_paint(color)
 					self.color = color 
 					puts "You have spray painted your car to #{color}"
+				end 
+
+				def to_s
+					"This is my #{color} #{model} that was made in #{year}"
 				end 
 			end 
 
@@ -78,4 +90,21 @@
 			puts lumina.year # => 1997
 			puts lumina.color # => black 
 			lumina.spray_paint("pink") # You have spray painted your car to pink 
+			MyCar.gas_mileage(13, 351) # => 27 miles per gallon of gas 
+			puts lumina # => This is my white chevy lumina that was made in 1997 
+
+ 	# WHY ARE WE GETTING THIS ERROR? 
+
+ 		class Person 
+ 			attr_reader :name 
+
+ 			def initialize(name)
+ 				@name = name 
+ 			end 
+ 		end 
+
+ 		bob = Person.new("Steve")
+ 		bob.name = "Bob"
+
+ 		# ANSWER: We get this error because attr_reader only creates a getter method. When we try to reassign the name instance variable to "Bob", we need a setter method called name=. We can get this by changing attr_reader to attr_accessor or attr_writer if we don't intend to use the getter functionality.
 

@@ -413,3 +413,114 @@
 				object = WhatAreClasses.new
 				object.method 
 				# => I'm altered data of this object. Hello. 
+
+#-----------------------------
+	
+		# CLASS METHODS 
+			# => methods that we can call directly on the class itself without having to instantiate any objects 
+
+			#EXAMPLE 
+				def self.what_am_i
+					"I'm a GoodDog class!"
+				end 
+
+				GoodDog.what_am_i # => I'm a GoodDog Class!
+
+			# Class methods are necessary to put functionality that does not pertain to individual objects. Objects contain state, and if we have a method that does not need the deal with states.. then we can use a class method
+
+		# CLASS VARIABLES 
+			# => variables that are created by using two symbols: @@ 
+
+			#EXAMPLE
+			class GoodDog
+				@@number_of_dogs = 0 
+
+				def initialize 
+					@@number_of_dogs += 1 
+				end 
+
+				def self.total_number_of_dogs
+					@@number_of_dogs
+				end 
+			end  
+
+			puts GoodDog.total_number_of_dogs # => 0 
+			dog1 = GoodDog.new 
+			dog2 = GoodDog.new 
+
+			puts GoodDog.total_number_of_dogs # => 2 
+
+			# ^^^ We have a class variable called @@number_of_dogs which we initialize to 0. Then our constructor (initialize method -- also a instance method), we increment that number by 1. This demonstrates that we can access class variables from within a instance method. Finally, we can return the value of the class variable in the class method self.total_number_of_dogs. 
+			# This example is to use a class variable and a class method to keep track of a class level detail that pertains only to the class ... but not the individual objects 
+
+	# CONSTANTS 
+		# => varaibles that you never want to change 
+		# Define a constant by using an upper case letter at the beginning of the variable name 
+
+		#EXAMPLE
+			class GoodDog 
+				DOG_YEARS = 7 
+
+				attr_accessor :name, :age 
+
+				def initialize(n, a)
+					self.name = n 
+					self.age = a * DOG_YEARS
+				end 
+
+				sparky = GoodDog.new ("Sparky", 4)
+				puts sparky.age # => 28
+			end  
+
+			# ^^^ Here we used a constant DOG_YEARS to calculate the age in dog years when we created the obect sparky. Note that we used the setter methods in the initialize method to initialize the @name and @age instance variables given to us by the attr_accessor method. We then used the age getter method to retrieve the value from the object. 
+
+			# DOG_YEARS is a variable that will never change for any reason so we use a constant. It is possible to reassign a new value to the constants but Ruby will throw a warning. 
+
+	# to_s 
+		# => isntance method comes built in to every class in Ruby. 
+		# When using puts sparky... it automatically calls to_s on its argument which is in this case the spark object. By default, the to_s method returns the name of the object's class and an encoding the object id.
+
+		# MOSTLY USED FOR STRING INTERPOLATION  
+
+		# WE CAN OVERRIDE BY DOING THIS: 
+
+		class GoodDog
+			DOG_YEARS = 7 
+
+			attr_accessor :name, :age 
+
+			def initialize(n, a)
+				self.name = n
+				self.age = a * DOG_YEARS
+			end  
+
+			def to_s
+				"This dog's name is #{name} and it is #{age} in dog years"
+			end 
+		end 
+
+		sparky = GoodDog.new("Sparky", 4)
+		puts sparky # => This dog's name is Sparky and it is 28 in dog years 
+
+		# p is very similar to puts except it doesn't call on the to_s on its argumnts.. it calls for inspect which is a method that helps for debugging purposes so we don't want to override it
+
+#-----------------------------
+	 # MORE ON SELF 
+
+	 # We use self to specify a certain scope of our program
+	 # We can use it many ways: 
+	 	# 1. Use self when calling setter methods from within the class. 
+	 	# 2. Use self for class method definitions 
+
+# SUMMARY 
+	# In this chapter we covered...
+
+		# Initializing objects with the new method
+		# How instance variables keep track of an object's state
+		# Learning how attr_* methods generate getters and setters
+		# Using instance methods to perform operations on our objects
+		# Using class methods to perform operations at the class level
+		# Assigning class variables to relate specifically to our class
+		# Assigning constants that never change to perform operations in our classes
+		# How the to_s method is used and that we've been using it implicitly all along.
+		# How and when to use self	
