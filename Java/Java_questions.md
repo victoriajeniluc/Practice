@@ -18,6 +18,6 @@
 	- out is a static member of the System class, and is an instance of java.io.PrintStream
 	- println() is am ethod of java.io.PrintStream. 
 		--> METHOD THAT IS OVERLOADED TO PRINT MESSAGE TO OUTPUT DESTINATION, WHICH IS TYPICALLY A FILE OR A CONSOLE
-7. What is a static member  
+7. What is a static member?
 
 
