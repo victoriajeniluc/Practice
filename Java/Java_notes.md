@@ -16,7 +16,7 @@
 		- the superset of JRE and contains everything that is in the JRE plus tools such as the compiler and debugger; **necessary developing java applications**!!
 
 ## Java Lanaguage 
-** IDENTIFIERS ** 
+**IDENTIFIERS** 
 		* IDENTIFIERS are case sensitive.
 	  	*  write it as --> MyFirstClass NOT Myfirstclass
 	  * IDENTIFIERS NAMING RULES:
@@ -48,7 +48,7 @@
 	      	* false 
 	      	* null 
 	      		* true, false, and null are not keywords in Java, these are literals 
-** COMMENTS **
+**COMMENTS**
 	* Comments are notes written to a code for documentation purpose
 	* Comments are not part of the program and doesn't affect the flow of the program 
 	* Comments are also excluded from the complied code 
