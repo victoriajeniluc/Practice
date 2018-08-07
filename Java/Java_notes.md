@@ -135,8 +135,66 @@
           * For hourglass symbol, use '\u23f3'
           * For indian rupree symbol, use '\u20B9'
   * String Literals - ex. 5
+    * Sequence of characters known as a String 
+    * String literal is values placed inside double quotation mark
+      * Example: 
+        * "" : Empty String 
+        * " ": Single Space 
+        * "A": String containing the single character A
+        * "Java": String for the text Java 
+        * "Hello\n": String containing Hello and newline or linefeed character (NOTE use of escape sequence)
+        * "\"": String containg a double quote
   * Null Literals
+    * Null literal is defined in Java source code file as null. 
+    * We typically assign null literals to object reference variables. 
+      * Example: 
+        * String name = null;
+        * Object obj = null; 
+          * Note: String and Object are classes. 
+  
+  *IMPORTANCE OF VARIABLES*
+    * [Example Variable](variable.png)
+      * Starting number of apples: 5
+        * Count = 5 .. meaning that it stores the value of five in the variable name count 
+      * Add apples: 2
+        * Count = 7 .. meaning that it stores the value of 7 in the variable name count 
+      * Subtract apples: 3 
+        * Count = 4 .. meaning that it stores the value of 4 in the variable name count 
+    * This is why location is know as variable. Generally the binary representation is stored in the memory location. The decimal 5,7,4 just to explain the concept of variable. 
 
+**Variables in Java** 
+* A variable is a: 
+  * Data type - the data type indicates the type of value, variable can hold.
+    * Example: integer numbers, floating point numbers, strings and so on. 
+  * Name - the variable name must follow rules for identifiers 
+* Declare a variable as follows: 
+  <data type> <name> [=Initial value]; 
+* The Java programming language is statically-typed, which means that the <data type> must be declared before variables can be used and it can't be changed later. 
+* The <data type> can be either:
+  1. Primitive type
+    * int x = 100; // Primitive type 
+    * char var = 'a'; // Primitive type  
+  2. Reference type
+    * String name = "Vikky"; // Reference type 
+      * String is a class in Java 
+    * Car myCar; // Reference type
+      * Car is a user defined class 
+
+*EXAMPLE OF MEMORY LOCATION WITH VARIABLES* 
+(memory_location.png)
+1. int x = 100 
+  * We have a memory location name is x, type is int
+  * We have assigned an initial value of 100 
+  * CAN ONLY STORE VALUES THAT ARE COMPATIBLE WITH INTEGER TYPE - NOT A FLOATING POINT NUMBER, STRING, ETC 
+2. char = var; var = 'A';
+  * We have another memory location name is var, type is char 
+    * First line is declared a variable and second line we're assigning a value of 'A' to this memory location 
+  * CAN ONLY STORE VALUES THAT ARE COMPATIBLE WITH CHAR TYPE - NOT A FLOATING POINT NUMBER, STRING, ETC 
+3. String name = "Udayan";
+  * String type is which is a reference type, the memory location stores the address pointing to the string value and not the actual string value( the value is stored in another memory location getting pointed from the name name and type string)   
+
+**CONCATENTATION** 
+  * Please refer to Variables.java file in the LiteralsVariable project 
 
 
 ## Files in Program 
