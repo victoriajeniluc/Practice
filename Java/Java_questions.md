@@ -21,3 +21,4 @@
 7. What is a static member?
 8. Eclipse is able to create documentation - so the developer doesn't have to make so many comments, is IntelliJ able to do so too? 
 
+

@@ -77,6 +77,68 @@
 * Single - Line comments 
 	// Comment - Used for single - line comments  
 
+**LITERALS**
+* Java Literals are syntactic representations of numeric, boolean, character or string data. 
+* Literals provide means of expressing specific values in your program 
+  * Example: 
+    * 1. 100
+    * 2. 12.4
+    * 3. true 
+    * 4. 'A'
+    * 5. "Java"
+
+* The different types of literals in Java are: 
+  * Integer Literals - ex. 1 from above 
+    * An integer in Java can be representated in 4 forms: 
+      1. Decimal (Base 10)
+        * No special notation 
+        * Example: 15 
+      2. Octal (Base 8)
+        * Precede by 0
+        * Example: 017 (represents 15)
+      3. Hexadecimal (Base 16)
+        * Precede by 0x or 0X
+        * Example: 0xF (represents 15)
+      4. Binary (Base 2)
+        * Precede by 0b or 0B
+        * Example 0b1111 (represents 15)
+  * Floating-Point Literals - ex. 2 from above 
+    * Represents decimal with fractional parts 
+      * Example: 7.873 or -0.089 
+    * 2 notations are possible for floating point numbers: 
+      1. Standard Notation: 
+        * Example: 74589787.12 or 0.314567821 
+      2. Scentific Notation: 
+        * Example: 7.458978712E7 or 3.12567821E-1 
+  * Boolean Literals - ex. 3 from above 
+    * There are two boolean literals in Java: 
+      1. true 
+      2. false 
+        * Note: "true" and "false" are String literals 
+        * true(without quotes) and false(without the quotes) are boolean literals 
+  * Character Literals - ex. 4 from above 
+    * Character Literals represent Unicode characters 
+    * Unicode provides a unique number for every character: 
+      * No matter what platform, program, language 
+
+    * To use a character literal, enclose the character in single quote delimiter 
+      * Example: 
+        * The letter a is represented as 'a'
+        * For special characters, a backslash (escape character) is used, followed by the character code
+          * '\n': new line or line feed(LF)
+          * '\t': tab 
+          * '\\': Backslash 
+          * '\'': Single quotation mark 
+        * Characters from other languages or other symbols can be represented by Unicode value 
+          * For Alphabet A, use '\u0041'
+          * For number 4 in devanagri script, use '\u096A'
+          * For hourglass symbol, use '\u23f3'
+          * For indian rupree symbol, use '\u20B9'
+  * String Literals - ex. 5
+  * Null Literals
+
+
+
 ## Files in Program 
 * src folder is where you save all the java files 
 * File name should match the public class's name 
