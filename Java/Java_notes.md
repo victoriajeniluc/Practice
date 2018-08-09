@@ -294,6 +294,44 @@
         * boolean b1 = 0; // Compliation error 
         * boolean b2 = "true"; // Compilation error 
 
+**OPERATORS** 
+  1. Arithmetic operators 
+    * are binary operators 
+    * take two openings one at the left side of the letter sign and another to the right 
+
+    *ADDITION* 
+    * Opr1 + Opr2
+    * Adds or Concatenates Opr1 + Opr2
+
+    *SUBTRACTION*
+    * Opr1 - Opr2
+    * SUBTRACTS Opr2 from Opr1
+
+    *MULTIPLICATION*
+    * Opr1 * Op2
+    * Multiplies Opr1 by Opr2
+
+    *DIVISION* 
+    * Opr1 / Opr2
+    * Divides Opr1 by Opr2 
+
+    *MODULE* 
+    * Opr1 % Opr2 
+    * Calculates the remainder of dividing Opr1 by Opr2 
+
+  *CASTING*
+    * Implict 
+      * Example: byte b1 = 127;
+      * the compiler is actually doing this for us byte b1 = (byte) 127.. but since the 127 is within the range of the byte size.. we don't have do it!
+
+    * Explicit
+      * Example: byte res = (byte) (126 + 19) - we have to do it here because it's outside the range of the byte size 
+      
+  2. Unary operators 
+  3. Relational operators 
+  4. Logical operators 
+  5. Assignment operators 
+
 ## Files in Program 
 * src folder is where you save all the java files 
 * File name should match the public class's name 
