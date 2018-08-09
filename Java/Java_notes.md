@@ -196,6 +196,103 @@
 **CONCATENTATION** 
   * Please refer to Variables.java file in the LiteralsVariable project 
 
+**Primitive Data Types** 
+  * The Java Programming language defines eight primitive data types: 
+    1. byte(integral)
+      * is a 8-bit signed integer
+      * has a minimum value of -128 and a max of 127 
+
+      * Example: 
+        * byte b1 = -128; 
+        * byte b2 = 127;
+        * byte b3 = 25; 
+
+      * [How to convert decimal into binary](decimal_to_binary.png)
+
+      * [How to convert negative decimal into binary](negative_decimal_to_binary.png) 
+
+    2. short (integral)
+      * is a 16-bit signed integer
+      * has a minimum value of -32768 and a max of 32767
+      * this means short = byte + more data
+
+        * Example: 
+          * short s1 = -32768;
+          * short s2 = 32767; 
+          * short s3 = 100; 
+
+    3. int(integral)
+      * is a 32- bit signed integer
+      * has a minimum of -2^31 [-2,147,483,648] and a max of 2^31-1 [2,147,483,647]
+      * this means int = short + more data 
+
+        * Example of when values get rewritten when we reassign the value to i1:
+          * int i1 = -50000; 
+          * System.out.println(i1) // -50000
+          * int i1 = 50000;
+          * System.out.println(i1) // 50000 
+          * int i1 = 100_000;
+          * System.out.println(i1) // 100_000
+            * underscores is just for grouping purposes, to improve readability. value stored is 100000
+
+    4. long(integral)
+      * is a 64-bit signed integer 
+      * has a minimum of -2^63 and a max of 2^63-1 
+      * this means: long = int + more data 
+
+      * suffix of the value L(upper case) of l(lower case)
+        * Important point to note here is that by default integral literal are of int type and hence for values within int range(-2147483648 to 2147483647), or suffix L or l is not needed. BUt ofr values outside the int range, suffix L is compulsory 
+        * In other words, int type values can be easily accommodated by long types 
+
+          * Example: 
+            * long l1 = -50000; // suffix L is optional 
+            * long l2 = 50000; // suffix L is optional 
+            * long l3 = 100_000; // suffix is optional 
+
+            * long l4 = 2147483648L; // suffix is compulsory, this number is out of int range 
+
+    5. float(floating point)
+      * have double as default data type 
+      * is 32-bit IEEE 754 floating point. Float covers a range from 1.40129846432481707e-45 to 3.40282346638528850e+38 (positive or negative)
+      * Floating-point literal includes either a decimal point or one of the following: 
+        * E or e // (add exponential value)
+        * F or f // (float)
+        * D or d // (double)
+    6. double(floating point)
+      * the double data type is a 64-bit IEEE 754 flaoting point. Double covers a range from 4.94065645841246544e-32d to 1.79769313486231570e+308d (positive or negative)
+          * Example for floats and doubles:
+            * 5.27 // simple floating-point value (a double)
+            * 2.15e22 // a large floating-point value (a double)
+            * 2.718F // a simple float size value 
+            * 123.4E+306D // a large double value, D is optional  
+
+    7. char(textual)
+      * is a single 16-bit Unicode character 
+      * has a minimum value of '\u000' (or 0) and a max of '\uffff' (or 65,535 inclusive)
+      * each unicode value is integral value, hence int literal can be assigned to a char as  well. Note that value should be between 0 and 65,535. 
+        * Example: 
+          * char c1 = 65; // December value corresponding to character 'A'
+          * char c2 = 'A'// character 'A'
+          * char c3 = '/u0041' // Unicode value corresponding to character 'A'
+          * char c4 = 8377; // Decimal value code for indian rupee symbol 
+          * char c5 = '\u20B9'; // Unicode value for indian rupee symbol 
+          * char c6 = 65535; // no error 
+          * char c7 = 65536; // compilation error
+      * As each unicode value is an integral value, and above range 0 to 65,535 can be easily accomodated by int type. Hecne all char literal can be assigned to int type. 
+        * Example: 
+          * int i1 = 'A' // corresponding decimal value is 65 
+          * int i2 = '/u2980'; //corresponding decimal value is 8377 
+
+    8. boolean(logical)
+      * represents two states: true or false 
+
+      * Example:
+        * boolean result = false 
+          * The example shown above, declares a variable named result as a boolean type and assigns it a value of false 
+      * Example: 
+        * boolean flag = true; 
+        * boolean b1 = 0; // Compliation error 
+        * boolean b2 = "true"; // Compilation error 
 
 ## Files in Program 
 * src folder is where you save all the java files 
