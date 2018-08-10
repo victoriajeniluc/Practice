@@ -27,3 +27,4 @@
 13. difference between post and pre increment/decrement because i got it when the professor explained it... but when we were running the program, it seems the same
 14. naming convention for classes verses naming convention for variables (just a review)
 15. importance of using a exclusive OR logical operator (^)? 
+16. review explict casting and implict casting
