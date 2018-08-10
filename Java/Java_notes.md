@@ -15,7 +15,9 @@
 * JDK aka Java Development Kit 
 		- the superset of JRE and contains everything that is in the JRE plus tools such as the compiler and debugger; **necessary developing java applications**!!
 
+----------------------------------------
 ## Java Lanaguage 
+----------------------------------------
 **IDENTIFIERS** 
 * IDENTIFIERS are case sensitive.
 	*  write it as --> MyFirstClass NOT Myfirstclass
@@ -48,6 +50,7 @@
     	* false 
     	* null 
     		* true, false, and null are not keywords in Java, these are literals 
+----------------------------------------
 **COMMENTS**
 * Comments are notes written to a code for documentation purpose
 * Comments are not part of the program and doesn't affect the flow of the program 
@@ -75,8 +78,8 @@
 	*/
 
 * Single - Line comments 
-	// Comment - Used for single - line comments  
-
+	// Comment - Used for single - line comments
+----------------------------------------  
 **LITERALS**
 * Java Literals are syntactic representations of numeric, boolean, character or string data. 
 * Literals provide means of expressing specific values in your program 
@@ -151,7 +154,7 @@
         * String name = null;
         * Object obj = null; 
           * Note: String and Object are classes. 
-  
+----------------------------------------  
   *IMPORTANCE OF VARIABLES*
     * [Example Variable](variable.png)
       * Starting number of apples: 5
@@ -192,10 +195,10 @@
   * CAN ONLY STORE VALUES THAT ARE COMPATIBLE WITH CHAR TYPE - NOT A FLOATING POINT NUMBER, STRING, ETC 
 3. String name = "Udayan";
   * String type is which is a reference type, the memory location stores the address pointing to the string value and not the actual string value( the value is stored in another memory location getting pointed from the name name and type string)   
-
+----------------------------------------
 **CONCATENTATION** 
   * Please refer to Variables.java file in the LiteralsVariable project 
-
+----------------------------------------
 **Primitive Data Types** 
   * The Java Programming language defines eight primitive data types: 
     1. byte(integral)
@@ -293,7 +296,7 @@
         * boolean flag = true; 
         * boolean b1 = 0; // Compliation error 
         * boolean b2 = "true"; // Compilation error 
-
+----------------------------------------
 **OPERATORS** 
   1. Arithmetic operators 
     * are binary operators 
@@ -327,20 +330,100 @@
     * Explicit
       * Example: byte res = (byte) (126 + 19) - we have to do it here because it's outside the range of the byte size 
       
-  2. Unary operators 
+  2. Unary operators
+    * + : unary plus operator; indicates positive value (by default numbers are always positive) 
+    * - : unary minus operaator; negates an expression or value
+
+    * ++ : increment operator; increments a value by 1 
+    * -- : decrement operator; decrements a value by 1
+      * increment and decrement operators increase and decrease a value stored in a number variable by 1. 
+        * Example: 
+        int var = 100; // Following two statements are incrementing the value of var by 1 
+
+        var = var + 1; // incrementing the value of var by 1 
+        OR 
+        var++; // incrementing the value by 1 
+
+      * increment and decrement operators can be placed before or after an operand 
+        * when the operator is placed before the operand it is called pre- 
+          * Example: 
+            * ++var; or --var; 
+        * when the operator is placed after the operand it is called post 
+          * Example: 
+            * var++; or var--;  
+
+      * pre-increment / pre-decrement: 
+        * WHEN THE OPERATOR IS PLACED BEFORE AN OPERAND(++expr, --expr), the variable will be incremented or decremented by 1 in the memory, and tehn the new value is used in the expression in which it appears
+          * Example:
+            * int a = 25; 
+            * System.out.println(++a); // 26
+            * System.out.println(--a); // 25 
+      * post-increment / post-decrement: 
+        * WHEN THE OPERATOR IS PLACED AFTER AN OPERAND(expr++, expr--), the old value of the variable will be used in the expression where it appears and then the variable will be incremented or decremented by 1 in the memory... this means: 
+          * if b++ is printed out.. right now it is 25 so it will use 25 at this point. THEN it will increment it by 26 and stored in the memory 
+          * if b-- is printed out next ... it will use what is right now which is 26... then it will be stored in the memory at 25 later. 
+          * Example:
+            * int b = 25; 
+            * System.out.println(b++); // 25
+            * System.out.println(b--); // 26 
+
+    * ! : logical complement operator; 
+    inverts the value of a boolean
+      * Example: _08LogicalComplement.java   
   3. Relational operators 
-  4. Logical operators 
+    * are binary operators (operates on 2 operands) and compare the values of the operands 
+      * the output of the expression is either true or false 
+        * > : Opr1 > Opr2 
+          * Opr1 is greater than Opr2 
+        * < : Opr1 < Opr2
+          * Opr is less than Opr2
+        * >= : Opr1 >= Opr2 
+          * Opr1 is greater than or equal to Opr2 
+        * <= : Opr1 <= Opr2 
+          * Opr1 is less than or equal to Opr2 
+        * == : Opr1 == Opr2 
+          * Opr1 is euqal to Opr2 
+        * != : Opr1 != Opr2 
+          * Opr1 does not equal to Opr2 
+
+  4. Logical operators
+    * have two boolean operands that yield as a boolean result 
+    * please refer to the table for these below! 
+      * && : logical AND 
+      * & : bitwise logcal AND
+        * && operator supports short - circuit evaluations but & operator doesn't 
+        * if the first operand to && operator evalues to false, the result can never be true, hence && does not evalue the second operand 
+        * But the & operator evalues both the operands before returning an answer  
+      * || : logical OR
+      * | : bitwise logical inclusive OR
+        * || operator supports short-circuit evaluations but | operator doesn't 
+        * if the first operand to || operator evalues to false, the result can never be true, hence || does not evalue the second operand 
+        * But the | operator evalues both the operands before returning an answer  
+      * ^ : bitwise logical exclusive OR 
+        * the result of a bitwise logical exclusive OR operation is true, if and only if one operand is true and the other is false 
+        * Note that both operands must always be evaluated in order to calculate the result of a bitwise logical exclusive OR. 
+      * ?: : ternary 
+        * ternary operators work on 3 operands 
+        * the structure of the expression is using a ternary operator is: 
+          * expr1 ? expr2 : expr3 
+            * expr1 is a boolean expression / variable 
+            * if expr1 is true, expr2 is returned
+            * if expr1 is false, expr3 is returned 
+
   5. Assignment operators 
+----------------------------------------
 
 ## Files in Program 
 * src folder is where you save all the java files 
 * File name should match the public class's name 
 
+----------------------------------------
 ## SYNTAX 
 * Semicolon must be at the end for every line in java 
 	* but multiple semicolons are legal.. even if they don't make sense 
 		* example: [picture of multiple semicolons](too_many_semi.png)
 
+----------------------------------------
 ## Miscellanos 
 * javadoc command is used to generate documents for code   
 

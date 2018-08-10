@@ -21,6 +21,9 @@
 7. What is a static member?
 8. Eclipse is able to create documentation - so the developer doesn't have to make so many comments, is IntelliJ able to do so too? 
 9. When using a reference string type... why doesn't it print out the address of the memory location? 
-
-
-
+10. What is the difference between float and double when it comes to integrals? 
+11. What is the importance of using modulo... what examples can we do with it? 
+12. Do we always have to write public, static, void, main(String[] args) {}? The part I am confused about is that if we are writing a function in a class that does not return anything nor take in an arguments.. why do we need to String[] args? Can't we leave it blank? 
+13. difference between post and pre increment/decrement because i got it when the professor explained it... but when we were running the program, it seems the same
+14. naming convention for classes verses naming convention for variables (just a review)
+15. importance of using a exclusive OR logical operator (^)? 
