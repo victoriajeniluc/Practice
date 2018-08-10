@@ -424,6 +424,71 @@
     * %= : Opr1 %= Opr2
       * Assigns result of Opr1 % Opr2 to Opr1 
 
+**OPERATOR PRECEDENCE AND ASSOCIATIVITY** 
+  * Please refer to the table to any notes below! 
+    * Example: 
+        * int a = 100; 
+        * a = --a + a++ + a-- + a++; 
+
+    * Step 1: 
+      * Group the operators based on precedence 
+
+      * SINCE THE EXPR++ and EXPR-- have higher precedence... group those first
+        * a = --a + (a++) + (a--) + (a++);
+      * THEN THEN NEXT ONE
+        * a = (--a) + (a++) + (a--) + (a++);
+
+    * Step 2: 
+      * THEN GROUP BY THE ASSOCIATION.. since + is left to right... group it left to right until you get 1 huge expression on the left and one to the right 
+        * a = ((--a) + (a++)) + (a--) + (a++);
+        * a = (((--a) + (a++)) + (a--)) + (a++);
+
+    * Step 3: 
+      * EVALUATE IT 
+        * a = (((--a) + (a++)) + (a--)) + (a++); 
+        * a = ((99+99) + (a--)) + (a++); 
+        * a = (198 + 100) + (a++);
+        * a = (298) + 99; 
+        * a = 397;  
+
+  * Example2: 
+        * int a = 1; 
+        * a = -a-- + a++ / -a-- * --a; 
+
+      Step 1: 
+        * a = -(a--) + (a++) / -(a--) * --a;       
+        * a = (-(a--)) + (a++) / (-(a--)) * (--a);
+
+      Step 2: 
+        * a = (-(a--)) + ((a++) / (-(a--))) * (--a);
+        * a = (-(a--)) + (((a++) / (-(a--))) * (--a));
+
+      Step 3: 
+          * a = (-(a--)) + (((a++) / (-(a--))) * (--a));
+          * a = (-1) + ((0 / (-1)) * (--a));
+           * a = (-1) + (0 * (-1));
+           * a = (-1) + 0; 
+           * a = -1; 
+
+    * Example3: 
+        * int a = 2; 
+        * boolean res = a++ == 2 || --a == 2 && --a == 2; 
+        * System.out.println(a);
+
+      Step 1: 
+        * boolean res = (a++) == 2 || --a == 2 && --a == 2;
+        * boolean res = (a++) == 2 || (--a) == 2 && (--a) == 2;
+
+      Step 2: 
+       * boolean res = ((a++) == 2) || ((--a) == 2) && ((--a) == 2);
+      * boolean res = ((a++) == 2) || (((--a) == 2) && ((--a) == 2));
+      
+      Step 3: 
+       * boolean res = ((2) == 2) || (((--a) == 2) && ((--a) == 2));
+       * boolean res = true || ...;
+       * boolean res = true;  
+       * a = 3; // because it stopped evaluating once the true hit in line 488
+
 ----------------------------------------
 
 ## Files in Program 
