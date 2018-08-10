@@ -410,7 +410,20 @@
             * if expr1 is true, expr2 is returned
             * if expr1 is false, expr3 is returned 
 
-  5. Assignment operators 
+  5. Assignment operators
+    * = : Opr1 = Opr2 
+      * Assigns value of Opr2 to Opr1 
+    * += : Opr1 += Opr2
+      * Assigns result of Opr1 + Opr2 to Opr1  
+    * -= : Opr1 -= Opr2
+      * Assigns result of Opr1 - Opr2 to Opr1 
+    * * = : Opr * = Opr2 (the * and = should be together) 
+      * Assigns result of Opr1 * Opr2 to Opr1 
+    * /= : Opr1 /= Opr2
+      * Assigns result of Opr1 / Opr2 to Opr1 
+    * %= : Opr1 %= Opr2
+      * Assigns result of Opr1 % Opr2 to Opr1 
+
 ----------------------------------------
 
 ## Files in Program 
