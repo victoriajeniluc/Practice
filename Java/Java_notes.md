@@ -488,7 +488,39 @@
        * boolean res = true || ...;
        * boolean res = true;  
        * a = 3; // because it stopped evaluating once the true hit in line 488
+----------------------------------------
+**IF - ELSE STATEMENTS**
+  * Selection statements 
+    * if, if - else, if - else if - else 
+    * switch - case 
+  * Looping statements 
+    * while, do - while 
+    * for 
+  * Branching statements 
+    * break
+    * continue 
+    * return 
 
+  * IF STATEMENT 
+    * executes a statement or block of statements if the specified expression is true 
+      * the simple if statement syntax: 
+
+        if (<boolean_expression>)
+         statement,  --> this is used when you only need to execute one  statement when it is true
+
+        OR 
+
+        if (<boolean_expression>) {
+          statement; --> this is similar to the one above... they say that it is very common for people ot not use the curly brackets after one statement ... but as a habit, it is good to use it
+        }  
+
+        OR 
+
+        if (<(boolean_expression>) {
+          statement 1; 
+          statement 2;
+          ...
+        }
 ----------------------------------------
 
 ## Files in Program 
@@ -507,3 +539,5 @@
 
 ## SHORTCUT 
 * sout + tab will type out System.out.println("Hello World");
+* up arrow + F6 will select all the variables / classes / method naming convention and change it
+* psvm + tab will generate the main method 
