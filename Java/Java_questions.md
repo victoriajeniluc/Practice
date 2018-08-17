@@ -28,3 +28,4 @@
 14. naming convention for classes verses naming convention for variables (just a review)
 15. importance of using a exclusive OR logical operator (^)? 
 16. review explict casting and implict casting
+17. What is faltu? 

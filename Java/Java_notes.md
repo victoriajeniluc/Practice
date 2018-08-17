@@ -541,6 +541,81 @@
           statement 1; 
           statement 2; 
         }
+
+  * IF - ELSE IF - ELSE STATEMENT 
+    * When we want to test more than two scenarios then implementing logic using if-else statement is not easy. In such scenarios we have if - else if - else statements 
+
+      * SYNTAX: 
+
+      if(<boolean_expression>) {
+        statement 1; 
+        statement 2;
+      } else if (<boolean_expression>) {
+        statement 1; 
+        statement 2; 
+      } else {
+        statement 1; 
+        statement 2; 
+      }
+
+    ** you can have as many if else blocks and the else block is optional
+----------------------------------------
+
+**SWITCH-CASE STATEMENTS**
+  * used to compare the value of a variable with multiple values and execute some statements based on the match 
+
+  * SNYTAX: 
+
+    switch(expression) {
+      case constant1:
+        statement 1; 
+        statement 2; 
+        ... 
+        break;
+      default: 
+        statement 1; 
+        statement 2; 
+        ... 
+        break;
+      case constant2: 
+        statement 1; 
+        statement 2; 
+        ... 
+        break;
+    }
+
+    ** NO CURLY BRACKETS FOR CASE BLOCKS, EVEN IN CASE OF MORE THAN 1 STATEMENTS 
+    ** ALL THE CASE BLOCK STATEMENTS ARE OPTIONAL INCLUDING BREAK. BLANK CASE BLOCK IS PERFECTLY LEGAL CODE.
+    ** DEFAULT BLOCK CAN APPEAR ANYWHERE IN THE CODE. IT SHOULD NOT BE THE LAST ONE
+
+  * switch expression can accept the following: 
+    * char or character 
+    * byte or Byte
+    * short or Short 
+    * int or Integer 
+    * an enum only from Java 6 
+    * a string expression only from Java 7 
+
+  * case values: 
+    * must evaluate to the same type / compatible type as the switch expression can use
+    * case values can be compile-time constants 
+      * final int n1 = 5; --> final means that once it is assigned for the first time... it can never be changed 
+        final int n2 = 10;
+        final int n3; 
+        n3 = 20; 
+
+        in this case ^^, 
+        100 -> compile time constant 
+        n1 -> compile time constant 
+        n2 -> compile time constant 
+        n1 + n2 -> compile time constant because each variable is a compile constant with the info given before 
+        n1 * n2 -> compile time constant
+        8 + 15 -> compile time constant because mathematical equations are compile constant 
+        n3 -> not considered as compile time constant 
+        n1 + n3 -> not considered as a compile time constant 
+
+  * switch - case blocks can only check for equality(==operator) 
+
 ----------------------------------------
 
 ## Files in Program 
