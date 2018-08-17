@@ -93,3 +93,58 @@ public class EqTest {
 	}
 
 		// Answer: boolean res = a++ == 7 && ++a == 9 || a++ == 9; boolean res = (((a++) == 7) && ((++a) == 9)) || ((a++) == 9); [Solve the above equation now. || operator is binary operator, so let us solve the left side first] boolean res = ((7 == 7) && ((++a) == 9)) || ((a++) == 9); //a = 8 boolean res = (true && ((++a) == 9)) || ((a++) == 9); //a = 8 boolean res = (true && (9 == 9)) || ((a++) == 9); //a = 9 boolean res = (true && true) || ((a++) == 9); //a = 9 boolean res = true || ((a++) == 9); //a = 9 boolean res = true; //a = 9 So, a = 9 res = true
+
+// What is the output of this? 
+    public class IfElseQuest1 {
+        public static void main(String[] args) {
+            int score = 45; 
+
+            if(score > 60) 
+                System.out.println("Congrats!");
+                System.out.println("You passed!");
+            else 
+                System.out.println("You failed...");
+        }
+    }
+
+        // Answer: Compliation error since the curly braces are not in between the if - else... it's not like the if statement at all! 
+
+// What is the output of this? 
+    public class IfElseQuest2 {
+        public static void main(String[] args) {
+            int flag = 1;
+            if(flag = 1) ;
+                System.out.println("Start");
+            else 
+                System.out.println("Stop");
+        }
+    }
+
+        // Answer: Compliation error because the '=' is not a boolean operator used to compare in the conditional... it is to assign the value of 1 to flag (aka assignment operator)
+        // ONLY BOOLEAN OPERATORS ARE USED IN THE IF STATEMENT!!!
+
+// What is the output of this? 
+    public class IfElseQuest2 {
+        public static void main(String[] args) {
+            int flag = false;
+            if(flag = true) ;
+                System.out.println("Start");
+            else 
+                System.out.println("Stop");
+        }
+    }
+
+        // Answer: "START" because the value of flag will be changed to true.. then it will read: IF (REASSIGNED TO TRUE.. which becomes true) PRINT OUT START ELSE PRINT OUT STOP 
+
+// What is the output of this? 
+    public class IfElseQuest2 {
+        public static void main(String[] args) {
+            int flag = true;
+            if(flag) ;
+                System.out.println("Start");
+            else 
+                System.out.println("Stop");
+        }
+    }
+
+        // Answer: "START" because it will run the statement like the previous example... and read it as: IF TRUE THEN PRINT OUT START ELSE STOP  

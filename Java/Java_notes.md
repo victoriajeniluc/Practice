@@ -521,6 +521,26 @@
           statement 2;
           ...
         }
+
+  * IF - ELSE STATEMENT
+    * executes the block of statement(s) if the specified expression is true and execute other block of statement(s) if the expression is false 
+
+      * SYNTAX: 
+
+        if(<boolean_expression>) 
+          statement; 
+        else 
+          statement; 
+
+        OR 
+
+        if(<boolean_expression>) {
+          statement 1; 
+          statement 2;
+        } else {
+          statement 1; 
+          statement 2; 
+        }
 ----------------------------------------
 
 ## Files in Program 
@@ -536,6 +556,7 @@
 ----------------------------------------
 ## Miscellanos 
 * javadoc command is used to generate documents for code   
+* you can have a lot of white space in side the if-else blocks.. it will still be ran - it won't throw an error 
 
 ## SHORTCUT 
 * sout + tab will type out System.out.println("Hello World");
