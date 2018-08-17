@@ -28,4 +28,5 @@
 14. naming convention for classes verses naming convention for variables (just a review)
 15. importance of using a exclusive OR logical operator (^)? 
 16. review explict casting and implict casting
-17. What is faltu? 
+17. What is fall through? Importance? 
+18. While using the switch case... if I did 1 % 2 ... why wouldn't it run to the default ? It still printed out odd?  
