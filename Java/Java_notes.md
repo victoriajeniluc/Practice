@@ -615,6 +615,48 @@
         n1 + n3 -> not considered as a compile time constant 
 
   * switch - case blocks can only check for equality(==operator) 
+----------------------------------------
+
+**CONTROL FLOW STATEMENTS**
+
+  * Selection Statements 
+    * if, if-else, if-else if-else 
+    * switch-case
+
+  * Looping statements 
+    * while, do-while 
+    * for 
+
+  * Branching Statements 
+    * break 
+    * continue 
+    * return  
+
+
+  * WHILE LOOP 
+
+    * SYNTAX: 
+
+      while(boolean_expression) {
+        statement1;
+        statement2;
+        ...
+      }  
+
+      OR 
+
+      while(boolean_expression) 
+        statement1; 
+
+    * boolean expression represents: 
+      1. any expression whose result is either rue or false e.g: age > 20 
+      2. a boolean variable e.g: flag
+      3. a boolean literal: true 
+      4. a boolean assignemnt e.g: flag = true 
+
+    * As with it, if-else or if-else if- else, you can omit curly braces, if there is only one statement.. but not recommended for practice 
+
+    * The statements inside the while loop are executed as long as the boolean_expression evaluates to true 
 
 ----------------------------------------
 
