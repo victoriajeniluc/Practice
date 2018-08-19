@@ -688,6 +688,40 @@
         * WHILE: 
           * Evaluates the boolean_expression before executing the statements 
 
+    * FOR LOOPS 
+      * 2 types of for loops in java: 
+        1. regular for loop 
+        2. enhanced for loop or for-each loop (JAVA SE 5 onwards)
+
+      * SNYTAX | regular 
+
+        for (initialization_expm; boolean_exprn; step_exprn) {
+          statement1; 
+          statement2; 
+          ....
+        }
+          > FOR LOOPS... THIS IS HOW IT WORKS: so it first goes to the initialization expression... then to the boolean expression.. if that is true... it will execute the block of statements. then it will go to the step_exprn to do the counter. though if the boolean_expression is false... it will exit the loop and stop. 
+        OR 
+
+        for (initialization_expm; boolean_exprn; step_exprn)
+          statement1;
+
+      * initialization_exprn:
+        > int ctr = 0; 
+        or 
+        > l = 1;
+
+      * boolean_exprn:
+        > same as boolean expression of if, while, do-while etc. 
+        > if it was just two semicolons... it will be an infinite loop - so as ;true; 
+        > it will stop the loop if the literal boolean false is given in the boolean expression in the for loop 
+
+      * step_exprn: 
+        > any java statement is allowed but it usually increments / decrements loop counter variable 
+        > ctr++; 
+        > i--; 
+
+    * ENHANCED FOR LOOP WILL BE COVERED WITH ARRAYS 
 ----------------------------------------
 
 ## Files in Program 
@@ -708,4 +742,5 @@
 ## SHORTCUT 
 * sout + tab will type out System.out.println("Hello World");
 * up arrow + F6 will select all the variables / classes / method naming convention and change it
-* psvm + tab will generate the main method 
+* psvm + tab will generate the main method
+* ctrl + shift + / will make it into a comment the highlighting part of the code  
