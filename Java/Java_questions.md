@@ -31,3 +31,4 @@
 17. What is fall through? Importance? 
 18. While using the switch case... if I did 1 % 2 ... why wouldn't it run to the default ? It still printed out odd? 
 19. MORE WORK ON TERNARY OPEATORS!!!! 
+20. Which one is better to use do-while or while?

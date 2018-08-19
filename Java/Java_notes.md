@@ -658,6 +658,36 @@
 
     * The statements inside the while loop are executed as long as the boolean_expression evaluates to true 
 
+  * DO-WHILE LOOP
+    * SYNTAX: 
+
+      do {
+        statement1; 
+        statement2; 
+        ... 
+      } while(boolean_expression); 
+
+      OR 
+
+      do 
+        statement1; 
+      while(boolean_expression); 
+
+        * boolean_expression represents either of the following: 
+          1. any expression whose result is either rue or false e.g: age > 20 
+          2. a boolean variable e.g: flag
+          3. a boolean literal: true or false 
+          4. a boolean assignemnt e.g: flag = true 
+
+      * The main difference between a while and do-while loop: 
+        * The statements inside a do-while loop are executed at least once 
+        * Literal false is allowed in boolean_expression of a do-while loop, but in while loop it is not allowed 
+
+        * DO-WHILE: 
+          * evaluates the boolean_expression after executing the statements 
+        * WHILE: 
+          * Evaluates the boolean_expression before executing the statements 
+
 ----------------------------------------
 
 ## Files in Program 
