@@ -722,6 +722,105 @@
         > i--; 
 
     * ENHANCED FOR LOOP WILL BE COVERED WITH ARRAYS 
+
+
+  * Nested control statement 
+    * One control statement used inside other control statement 
+
+    * Some Examples: 
+      * if statement inside another if statement 
+      * if statement inside a loop statement 
+      * lopp inside another loop 
+      * etc 
+
+  * Labeled statements: 
+    * label is the identifier for the statements 
+
+    * in java following statements can be labeled: 
+      * selection statements: if and switch statements 
+      * looping statements: while, do-while, and for
+      * expressions 
+      * assignments 
+      * a code block defined using {}
+      * return statements 
+      * try block 
+      * throws statements 
+
+    * Names of the labels follow the same rules of the name of identifiers in java 
+
+
+  * BREAK STATEMENT 
+    * used to break out of looping statements and switch - case block 
+
+  * CONTINUE STATEMENT 
+    * skips the current iteration of the loop and jumps to the next iteration 
+
+----------------------------------------
+**ARRAY** 
+  * An object that stores the collection of values (primitives / objects)
+  * use one variable to store multiple items of same / compatible type and we use the ame variable to modify the items 
+    * Example: 
+      scores: 85, 70, 95, 90 
+      names: viet, vikky, jessica, kezia 
+
+  * DECLARING ONE-DIMENISIONAL ARRAYS 
+    * 2 WAYS OF DOING THIS:   
+      1. Specify the type (primitive or object), and tehn specify the square brackets and then finally the array variable name: 
+        * Example: 
+          int [] scores; 
+          String [] names;
+          Student [] students;
+      2. Specify the type (primitive or object) and then the name of the array which is followed by the brackets: 
+        * int scores []; 
+        * String names []; 
+        * Student students [];
+
+  * CONSTRUCT / INSTANTIATE ONE-DIMENSIONAL ARRAY 
+    * use the keyword new, followed by the type and then finally specify the size within square brakcets []; 
+    1. Declare and instantiate in separate statements; 
+      * Example: 
+        int [] scores; 
+        scores = new int[4]; 
+    2. Declare and instantiate in thes ame line 
+      * Example: 
+        int [] scores = new int[4]; 
+        String [] names = new String[5]; 
+
+  * IT IS ILLEGAL TO INCLUDE THE SIZE OF THE ARRAY IN THE DECLARATION.. IT WILL GIVE YOU AN ERROR IF YOU DO THIS: 
+    * Example: 
+      X int [5] scores; 
+
+  * ONCE THAT THE SIZE OF THE ARRAY IS CREATED... THEN IT CAN NO LONGER BE CHANGED - so can't assign a position that is outside of the amount given 
+    * Example: 
+      X int [] scores = new int[4];
+        scores[5] = 8; 
+
+  * IT IS ALSO ILLEGAL TO TRY TO ASSIGN ANOTHER DATA TYPE TO THE POSITION OF AN ARRAY... 
+    * Example: 
+      X int [] scores = new int[4];
+        scores[1] = 'a'; --> this is not an int type but a char 
+        OR 
+        scores[4] = 29348507326789029837; --> this is outside of the int range
+
+  * LENGTH PROPERTY OF AN ARRAY OBJECT 
+    * Every array object in java has length property, which gives the size of the array 
+      > int [] scores = new int[4]; 
+      System.out.println(scores.length) // Prints out 4
+
+      > String [] names = new String[5]; 
+      System.out.println(names.length) // Prints out 5
+
+    * Relationship between last index and length of the array 
+      * last index == length of the array - 1
+
+  * 1 - D Array Object instantiation with data 
+    1. Instantiated directly by initializing it with data: 
+      > int [] scores = new int [] {85, 70, 95, 90};
+      OR 
+      > int [] scores = {85, 70, 95, 90}
+
+      * YOU DON'T HAVE TO GIVE THE SIZE IF YOU DO IT THE FIRST WAY: 
+        X int [] scores = new int[4] {85, 70, 95,90} ... this will give you a compliation error 
 ----------------------------------------
 
 ## Files in Program 

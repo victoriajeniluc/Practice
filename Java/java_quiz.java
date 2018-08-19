@@ -148,3 +148,294 @@ public class EqTest {
     }
 
         // Answer: "START" because it will run the statement like the previous example... and read it as: IF TRUE THEN PRINT OUT START ELSE STOP  
+
+// What will be the result of compiling and executing following program?
+
+public class IfTest1 {
+    public static void main(String[] args) {
+        int grade = 75;
+        if(grade > 60)
+            System.out.println("Congratulations");
+            System.out.println("You passed");
+        else
+            System.out.println("You failed");
+ 
+    }
+}
+    
+        // Answer: As there is no brackets after if, hence only one statement is part of if block and other is outside. Above code can be written as below: if(grade > 60) { System.out.println("Congratulations"); } System.out.println("You passed"); else System.out.println("You failed"); There should not be anything between if-else block but in this case, System.out.println("You passed"); is between if-else and thus Compilation error.
+
+// What will be the result of compiling and executing following program?
+
+public class IfTest2 {
+    public static void main(String[] args) {
+        int grade = 60;
+        if(grade = 60)
+            System.out.println("You passed...");
+        else
+            System.out.println("You failed...");
+    }
+}
+    // Answer: Following are allowed in boolean expression of if statement: 1. Any expression whose result is either true or false. e.g. age > 20 2. A boolean variable. e.g. flag 3. A boolean literal: true or false 4. A boolean assignment. e.g. flag = true boolean expression in this case is: (grade = 60), which is an int assignment and not boolean assignment. Hence Compilation error.
+
+// What is the output of following code?
+
+public class Switch1 {
+    public static void main(String[] args) {
+        int x = 2;
+        switch (x) {
+            case 1:
+                System.out.println("x is equal to 1");
+                break;
+            case 2:
+                System.out.println("x is equal to 2");
+                break;
+            case 3: 
+                System.out.println("x is equal to 3");
+                break;
+            default:
+                System.out.println("Still no idea what x is");
+        }
+    }
+}
+    // Answer: Reason: Matching case is found, System.out.println("x is equal to 2"); is executed. After that break; statement takes the control out of switch-case block.
+
+// What is the output of following code?
+
+public class Switch2 {
+    public static void main(String[] args) {
+        int x = 4;
+        switch (x) {
+            default:
+                System.out.println("Still no idea what x is");
+            case 1:
+                System.out.println("x is equal to 1");
+                break;
+            case 2:
+                System.out.println("x is equal to 2");
+                break;
+            case 3: 
+                System.out.println("x is equal to 3");
+                break;
+        }
+    }
+}
+
+    // Answer: No matching case found, control enters default block. "Still no idea what x is" is printed on to the console. No break statement, hence fall-through starts. Prints "x is equal to 1" on to the console. After that break; statement takes the control out of the switch- case block.
+
+// What will be the result of compiling and executing following program?
+
+public class Switch3 {
+    public static void main(String[] args) {
+        int a = 5;
+        int x = 10;
+        switch(x) {
+            case 10:
+                a *= 2;
+            case 20:
+                a *= 3;
+            case 30:
+                a *= 4;
+        }
+        System.out.println(a);
+    }
+}
+
+    // Answer: Matching case block "case 10:" is found, a *= 2; is executed, which means a = a * 2; => a = 5 * 2; => a = 10; No break statement, hence it enters in fall-through. a *= 3; is executed, which means a = a * 3; => a = 10 * 3; => a = 30; a *= 4; is executed, which means a = a * 4; => a = 30 * 4; => a = 120;
+
+// What will be the result of compiling and executing following program?
+
+public class Switch4 {
+    public static void main(String[] args) {
+        int score = 60;
+        switch (score) {
+            default:
+                System.out.println("Not a valid score");
+            case score < 70:
+                System.out.println("Failed");
+                break;
+            case score >= 70:
+                System.out.println("Passed");
+                break;
+        }
+    }
+}
+    // Answer: case values must evaluate to the same type / compatible type as the switch expression can use. switch expression can accept following: char or Character byte or Byte short or Short int or Integer An enum only from Java 6 A String expression only from Java 7 In this case, switch expressin [switch (score)] is of int type. But case expressions, score < 70 and score >= 70 are of boolean type and hence compilation error.
+
+// What will be the result of compiling and executing following program?
+
+public class Switch5 {
+    public static void main(String[] args) {
+        byte var = 100;
+        switch(var) {
+            case 100:
+                System.out.println("var is 100");
+                break;
+            case 200:
+                System.out.println("var is 200");
+                break;
+            default:
+                System.out.println("In default");
+        }
+    }
+}
+    // Answer: case values must evaluate to the same type / compatible type as the switch expression can use. switch expression can accept following: char or Character byte or Byte short or Short int or Integer An enum only from Java 6 A String expression only from Java 7 In this case, switch expressin [switch (var)] is of byte type. byte range is from -128 to 127. But in case expression [case 200], 200 is outside byte range and hence compilation error.
+
+// Which of the following statement is correct for below code?
+
+public class WhileTest1 {
+    public static void main(String[] args) {
+        final boolean flag = false;
+        while(flag) {
+            System.out.println("Good Morning!");
+        }
+    }
+}
+    // Answer: final boolean flag = false; statement makes flag a compile time constant. Compiler knows the value of flag, which is false, at compile time and hence it gives "Unreachable Code" error. Check the lecture on switch-case block to know more about compile time constants.
+
+//Which of the following statement is correct for below code?
+
+public class WhileTest2 {
+    public static void main(String[] args) {
+        final boolean flag;
+        flag = false;
+        while(flag) {
+            System.out.println("Good Morning!");
+        }
+    }
+}
+    // Answer: final boolean flag; flag = false; doesn't make flag a compile time constant. Compiler doesn't know flag's value at compile-time and hence it allows this syntax. At runtime, as boolean expression of while loop is false, loop doesn't execute even once and hence no output. Check the lecture on switch-case block to know more about compile time constants.
+
+// What will be the result of compiling and executing following program?
+
+public class WhileTest3 {
+    public static void main(String[] args) {
+        int x = 5;
+        while (x < 10) 
+            System.out.println(x);
+            x++;
+    }
+}
+    // Answer: while loop doesn't have curly bracket over here, so only System.out.println(x) belongs to while loop. Above syntax can be written as follows: int x = 5; while (x < 10) { System.out.println(x); } x++; As x++; is outside loop, hence value of x is always 5 within loop, 5 < 10 is true for all the iterations and hence infinite loop.
+
+// Which of the following statement is correct?
+
+public class DoWhileTest1 {
+    public static void main(String[] args) {
+        do {
+            System.out.println(100);
+        } while (true);
+        
+        System.out.println("Bye");
+    }
+}
+    // Answer: Boolean expression of do-while loop uses literal true (compile-time constant), hence Java compiler knows that this loop is an infinte loop. It also knows that once at runtime Java Control enters an infinite loop, none of the statements after loop block will get executed. Hence it marks all the codes after infinite loop as Unreachable Code, which results in compilation error. If boolean variable was used instead of boolean literal, then this program would have compiled and executed successfully.
+
+//Which of the following statement is correct?
+
+public class DoWhileTest2 {
+    public static void main(String[] args) {
+        do {
+            System.out.println(100);
+        } while (false);
+ 
+        System.out.println("Bye");
+    }
+}
+    // Answer: As do-while loop executes at least once, hence none of the code is unreachable in this case. Java runtime prints 100 to the console, then it checks boolean expression, which is false. Hence control goes out of do-while block. Java runtime executes 2nd System.out.println statement to print "Bye" on to the console.
+
+// What will be the result of compiling and executing following program?
+
+public class DoWhileTest3 {
+    public static void main(String[] args) {
+        int start = 1;
+        int sum = 0;
+        do {
+            if(start % 2 == 0) {
+                continue;
+            }
+            sum += start;
+        } while(++start <= 10);
+        System.out.println(sum);
+    }
+}
+    // Answer: When start is divisible by 2 [2, 4, 6, 8, 10], continue; statement takes the control to boolean expression and hence sum += start; is not executed. Hence result is the sum of numbers 1,3,5,7,9.
+
+// What will be the result of compiling and executing following program?
+
+public class ForLoop2 {
+    public static void main(String[] args) {
+        for(int i=0; i<=2; i++){}
+        System.out.println(i);
+    }
+}
+    // Answer: Variable i is declared inside for loop, hence it is not accessible beyond loop's body. System.out.println(i); gives compilation error.
+
+//What will be the result of compiling and executing following program?
+
+public class ForLoop1 {
+    public static void main(String[] args) {
+        int i;
+        for(i=0; i<=2; i++){}
+        System.out.println(i);
+    }
+}
+    //Answer: There is nothing inside loop body, hence loop body is blank. This loop executes 3 times, for i = 0, i = 1 and i = 2. For i = 3, control goes out of the for loop. Now, as i is declared outside for loop, hence it is accessible outside loop body. System.out.println(i); prints 3 to the console.
+
+// What will be the result of compiling and executing following program?
+
+public class ForLoop3 {
+    public static void main(String[] args) {
+        for:
+        for (int i = 2; i <= 100; i = i + 2) {
+            for(int j = 1; j <= 10; j++) {
+                System.out.print(i * j + "\t");
+            }
+            System.out.println();
+            if(i == 10) {
+                break for;
+            }
+        }
+    }
+}
+    // Answer: for is a keyword and hence can't be used as a lable. Java labels follow the identifier naming rules and one rule is that we can't use java keywords as identifier. Hence, Compilation error.
+
+// What will be the result of compiling and executing following program?
+
+public class NestedLoops1 {
+    public static void main(String[] args) {
+        int i;
+        outer: 
+        do {
+            i = 5;
+            inner:
+            while (true) {
+                System.out.println(i--);
+                if (i == 4) {
+                    break outer;
+                }
+            }
+        } while (true);
+    }
+}
+    // Answer: "outer" and "inner" are valid label names. On execution, control enters main method and creates int variable i. On encountering do-while loop, control goes inside and initializes variable i to 5. Then it executes while loop and it's boolean expression is always true. System.out.println(i--); prints 5 to the console first, and then decrements the value of i by 1. So, i becomes 4. Boolean expression of if(i == 4) evaluates to true. break outer; statement executes and takes the control out of do-while loop. main method ends and program terminates successfully. So, 5 gets printed only once.
+
+// What will be the result of compiling and executing following program?
+
+public class NestedLoops2 {
+    public static void main(String[] args) {
+        int i;
+        outer: 
+        do {
+            i = 5;
+            inner:
+            while (true) {
+                System.out.println(i--);
+                if (i == 4) {
+                    break;
+                }
+            }
+        } while (true);
+    }
+}
+    // Answer: "outer" and "inner" are valid label names. It prints 5 in an infinite loop. 
