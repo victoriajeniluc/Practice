@@ -756,7 +756,7 @@
     * skips the current iteration of the loop and jumps to the next iteration 
 
 ----------------------------------------
-**ARRAY** 
+**1 - D ARRAY** 
   * An object that stores the collection of values (primitives / objects)
   * use one variable to store multiple items of same / compatible type and we use the ame variable to modify the items 
     * Example: 
@@ -821,6 +821,44 @@
 
       * YOU DON'T HAVE TO GIVE THE SIZE IF YOU DO IT THE FIRST WAY: 
         X int [] scores = new int[4] {85, 70, 95,90} ... this will give you a compliation error 
+
+----------------------------------------
+
+**MULTIDEMSIONAL ARRAYS** 
+  * IS IMPLEMENTED AS ARRAY OF AN ARRAY 
+  * SYNTAX for 2-D: 
+      int[][]arr1; 
+      int[]arr2[];
+      int arr3[][];
+  * SYNTAX for 3-D; 
+      int[][][]arr1;
+      int[][]arr2[];
+      int[]arr3[][]; 
+      int arr4[][][]; 
+
+  * CONSTRUCT/INSTANTIATE TWO-D ARRAYS: 
+    * use the keyword new, followed by the type and then finally specify the size within the first square brackets []. leave the 2nd square bracket as blank:
+      1. Provide the size of 1st dimension:
+        int[][]arr1; 
+        arr1 = new int[3][]; 
+      2. Provide size of both the dimensions: 
+        int [] arr2= new int[3][3]; 
+
+  ** IT IS ILLEGAL TO NOT INCLUDE THE SIZE OF THE 1ST DIMENSION... WILL GIVE A COMPLIATION ERROR 
+    X int[][]arr3 = new int[]; 
+    X int[][]arr4 = new int[][3]; 
+
+  ** AS WITH 1-D ARRAY, IT IS ILLEGAL TO SPECIFY SIZE AT THE TIME OF THE DECLARATION... WILL GIVE AN COMPLIATION ERROR 
+    X int[4][]arr5;
+    X int[4][4]arr6;   
+
+
+  * [[1,2], 
+     [3,4], 
+     [5,6]] 
+   --> 1,3,5 represent the beginning of each row - there should be three rows
+   --> 1, 3, 5 are in column 1 
+   --> 2, 4, 6 are in column 2 
 ----------------------------------------
 
 ## Files in Program 
