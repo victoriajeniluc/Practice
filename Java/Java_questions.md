@@ -32,3 +32,5 @@
 18. While using the switch case... if I did 1 % 2 ... why wouldn't it run to the default ? It still printed out odd? 
 19. MORE WORK ON TERNARY OPEATORS!!!! 
 20. Which one is better to use do-while or while?
+21. Challenge 6 - Question 4: why is that i put k outside the nested loop... it works perfectly fine than inside the first loop? why is that when i put the incrementor for k inside loop... it doesn't work compared to after i do oneDArray[k] = arr[i][j]; 
+22. Challenege 6 - Question 4: why is that i can't use j? isn't it incrementing for each element of the assymetical array? 
