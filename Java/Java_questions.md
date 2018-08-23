@@ -34,3 +34,4 @@
 20. Which one is better to use do-while or while?
 21. Challenge 6 - Question 4: why is that i put k outside the nested loop... it works perfectly fine than inside the first loop? why is that when i put the incrementor for k inside loop... it doesn't work compared to after i do oneDArray[k] = arr[i][j]; 
 22. Challenege 6 - Question 4: why is that i can't use j? isn't it incrementing for each element of the assymetical array? 
+23. Why is that I have to run javac first before doing the java command line??

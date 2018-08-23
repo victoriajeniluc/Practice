@@ -861,6 +861,56 @@
    --> 2, 4, 6 are in column 2 
 ----------------------------------------
 
+**ENHANCED FOR LOOPS FOR ARRAYS** 
+  * AKA: for-each loop - introduced in JDK 5.0 
+  * simplifies iterating through an array 
+    * Example: 
+      * Old way: 
+        int [] arr = {10, 20, 30, 40, 50}
+        for(int i = 0; i < arr.length; i++){
+        System.out.println(arr[i]); 
+      }
+
+      * New way - using for-each loop:
+        for(int x : arr) {
+        System.out.println(x);  
+      }
+
+  * SYNTAX 
+
+    for(declaration :expression) {...}
+      * declaration: the varaible declaration, of a type compatible with the elements of the array you are accessing 
+      * expression: this must evaluate to the array you want to loop through. the array can be of any type: primitive, objects, even arrays of arrays(multidimensional arrays)
+
+  ** DO NOT USE ENHANCED FOR LOOP TO ENHANCE OR MODIFY THE DATA.... example is with the picture of (whyDoesntForEachModify.png) because it is able to assign and print it out for the first for-each... but once the second for each happens... you are exiting out of it... where the x can't be stored... thats why the numbers are all 0s.  
+    --> with the original for loop... we access a particular array element using arrays index and we were able to modify the elements 
+
+  ** DO NOT USE ENHANCED FOR LOOP TO PRINT ITEMS FROM BACKWARDS... ONLY THE ORIGINAL FOR LOOP CAN GO BOTH WAYS... ENHANCED CAN ONLY GO ONE DIRECTION
+
+  ** DO NOT USE ENHANCED FOR LOOP TO COUNT HOW MANY TIMES IT WAS ITERATED.. because you would use a variable x that is within the enhanced for loop which is not accessible to the outside scope compared to the original for loop where you can declare the variable on the gloabl scope to be be accessed. 
+
+* ENHANCED FOR LOOP FOR MULTIDIMENSIONAL ARRAYS 
+  * refer to the picture of (forEachMultiDimensional.png) 
+----------------------------------------
+**COMMAND LINE ARGUMENTS** 
+
+* type javac + Filename to compile the file - to check errors 
+
+* type java + Filename -without the extension to run the file and get the output of the file 
+  * the reason why this works because it will look for the file and the method call main... and it will print out everything in that method 
+
+* type dirs to find out the pathway of the file 
+
+**YOU HAVE TO COMPILE FIRST IN THE TERMINAL BEFORE RUNNING THE PROGRAM.. SO JAVAC THEN JAVA WITHOUT THE EXTENSION OF THE FILE** 
+
+* HOW TO PASS VALUES THROUGH THE COMMAND LINE: 
+  * java + className + arguments
+    * EXAMPLE: 
+      java CommandLine1 Red Green 
+  * GREAT EXAMPLE WOULD BE THE FIBONACCI EXAMPLE!!! 
+
+----------------------------------------
+
 ## Files in Program 
 * src folder is where you save all the java files 
 * File name should match the public class's name 
