@@ -911,6 +911,71 @@
 
 ----------------------------------------
 
+**PACKAGES** 
+  * So normally if we don't specify the package... we most likely will be putting our files in the default package -aka a special name for a folder in java.
+
+  * Example why we need packages:
+
+  COMPANY 1  
+    - So lets say that one company has a program - StringUtils.java and StringUtils.class - which reverses a name. 
+      ** NORMALLY COMPANIES WILL PROVIDE THE .CLASS FILE - which are mostly comments and just a general idea of what the code is doing .. but no specifics like data. 
+    - Let's say that someone wants to use company 1's StringUtils file... someone will just copy the .class file into the same folder as their project.. it runs perfectly fine. 
+
+  COMPANY 2 
+    - the second company may have the same file name as company one.. but the code is different - it concats two string variables together.
+    - So you do the same thing... and it runs perfectly fine  
+
+  PROBLEM: 
+    - we create a new file call UseStringUtils3 where it uses both of the methods that company one and company two had... if we copy the class files into the same folder as ours... it'll try to rewrite eachother since the name is the same.. and we know that we can't change the file name at all due to other people using these files 
+
+  SOLUTION:  
+    - instead of putting the files in the same location... java can put these files in a different location and it can change the name of the de-classfied new name ... it will be in folder called com, under subfolders company 1 and company 2.. with files which are StringUtils.class... but the file name you will be using to important into the program you are using is com1.company.StringUtils and com.company2.StringUtils
+
+** PACKAGES HAVE THE SYNTAX OF a.b.className -- a & b can be the folder and subfolder you place the .class file in
+
+  * type javac -help to pull up all the things you can do in the command line
+* type javac - d . fileName to generate the folders it needs to be created 
+
+* HOW TO USE A PACKAGE CLASS IN ANOTHER CLASS 
+  * lets say that you are using a file from another place and it has a pckage... well you must use the package name it is listed than the class name.. you can't just use the class name as StringUtils... you would have to use com1.company.StringUtils instead
+
+    public class UseStringUtils3 {
+      public static void main(String [] args) {
+        String c = com1.company.StringUtils.concat("Vikky", "Luc");
+        System.out.print(c);
+      }
+    }
+
+  OR 
+
+  * you can use import statement before the class is defined... that way you can use the class name instead. 
+
+  EXAMPLE CODE: 
+    import com.company2.StringUtils; 
+
+    public class UseStringUtils3 {
+      public static void main(String [] args) {
+        String c = StringUtils.concat("Vikky", "Luc");
+        System.out.print(c);
+      }
+    }
+
+* IF YOU USE MULTIPLE OF PACKAGES/ IMPORTS.... THIS IS THE ORDER IN THE FILE: 
+   1. PACKAGE 
+   2. IMPORTS - instead of writing multiple of imports statements - or using multiple of classes from the same package ... use a WILDCARD which is an asterisk * in place of the class name
+
+   import com.company2.*; 
+
+    public class UseStringUtils3 {
+      public static void main(String [] args) {
+        String c = StringUtils.concat("Vikky", "Luc");
+        System.out.print(c);
+      }
+    } 
+
+   3. CLASS DECLARATION 
+----------------------------------------
+
 ## Files in Program 
 * src folder is where you save all the java files 
 * File name should match the public class's name 

@@ -439,3 +439,186 @@ public class NestedLoops2 {
     }
 }
     // Answer: "outer" and "inner" are valid label names. It prints 5 in an infinite loop. 
+
+// What will be the result of compiling and executing following program?
+
+public class ArrayTest1 {
+    public static void main(String[] args) {
+        String msg = "Hello";
+        boolean [] flag = new boolean[1];
+        if(flag[0]) {
+            msg = "Welcome";
+        }
+        System.out.println(msg);
+    }
+}
+    // Answer: Variable msg is referring to String object "Hello". There is only one element in boolean array object and it is initialized to default value of boolean, which is false. flag[0] is false, if-check fails and control doesn't enter if block. System.out.println(msg) prints original value of msg, which is "Hello". 
+
+//Which of the following array declarations and initializations is NOT legal?
+    // A) char [] arr1 [] = new char[5][]; 
+    // B) int [] arr2 = {1, 2, 3, 4, 5};
+    // C) int [] arr3 = new int[3]{10, 20, 30};
+    // D) byte [] val = new byte[10]; 
+        // Answer: Options A, B and D are valid syntaxes to create array objects. Option C will give compilation error as we can't specify size at the time of initializing with data. new int[3]{10, 20, 30}; gives compilation error.
+
+//What will be the result of compiling and executing following program?
+
+public class ArrayTest3 {
+    public static void main(String[] args) {
+        String [] arr = new String[7];
+        System.out.println(arr);
+    }
+}
+    // Answer: Variable arr refers to an array object of String of 7 elements. Variable arr contains the memory address of String array object. arr is of reference type, hence it prints some String Containing @ symbol. We will talk on this more after Inheritance lecture.
+
+// Which is the correct way to find the number of elements in an array object? Consider array variable name is arr.
+    // A) arr.length()
+    // B) arr.size()
+    // C) arr.length 
+    // D) arr.size
+        // Answer: C - All array objects have length property, which is used to find out number of elements in the array object.
+
+// What will be the result of compiling and executing following program?
+
+public class ArrayTest4 {
+    public static void main(String[] args) {
+        int [] arr = {200, 100, 300, 400};
+        for (int i = arr.length - 1; i >= 0; ){
+            System.out.print(arr[i--] + " ");
+        }
+    }
+}
+    // Answer: 400 300 100 200 - Regular for loop starts with last index of the array [ last index = length of the array - 1] and runs till i >=0. There is no step expression but variable i is decremented by 1 in System.out.print(arr[i--] + " "); statement. Thus given for loop prints array elements in reverse order, last element to first element.
+
+// What will be the result of compiling and executing following program?
+
+public class ArrayTest5 {
+    public static void main(String[] args) {
+        char [][] arr = {
+                {'A', 'B', 'C'},
+                {'D', 'E', 'F'},
+                {'G', 'H', 'I'}
+        };
+        
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][1]);
+            }
+            System.out.println();
+        }
+    }
+}
+    // Answer: NOTE: System.out.print statement is printing arr[i][1], which means it prints 2nd array element of a particular row, for each iteration of inner loop. That is why output is: BBB EEE HHH To get all the array elements printed correctly, use arr[i][j] in System.out.print statement.
+
+// What will be the result of compiling and executing following program?
+
+public class ArrayTest6 {
+     public static void main(String[] args) {
+         int [] arr = new int[2];
+         arr[0] = 100;
+         arr[1] = 200;
+         arr = new int[2];
+         for(int x : arr) {
+             System.out.print(x + " ");
+         }
+     }
+}
+    // Answer: Initially, arr refers to an array object of 2 elements. 1st array element is 100 and 2nd array element is 200. Consider the statement, arr = new int[2]; Variable arr now refers to another array object of 2 elements, whose elements are initialized to default value of int, which is 0. So for loop prints, 0 0
+
+// What will be the result of compiling and executing following program?
+
+public class ArrayTest7 {
+    public static void main(String[] args) {
+        int [] arr1 = {1, 2, 3};
+ 
+        //Ascii value of 'A' is 65, 'B' is 66
+        int [] arr2 = {'A', 'B'};
+        
+        arr1 = arr2;
+        for(int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
+        }
+    }
+}
+    //Answer: Initially arr1 refers to an int array object of 3 elements: 1, 2, 3 And arr2 refers to an int array object of 2 elements: 65, 66 [char type is compatible with int type] Consider the statement arr1 = arr2; Variable arr1 copies the content of arr2. As arr2 refers to an int array object of 2 elements: 65, 66 so do arr1. for loop prints all the elements of an array object referred by arr1, which is 65 66
+
+// What will be the result of compiling and executing following program?
+
+public class ArrayTest8 {
+    public static void main(String[] args) {
+        int [] arr1 = {1, 2, 3};
+ 
+        //Ascii value of 'A' is 65, 'B' is 66
+        char [] arr2 = {'A', 'B'}; 
+        
+        arr1 = arr2;
+        for(int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
+        }
+    }
+}
+    // Answer: Initially arr1 refers to an int array object of 3 elements: 1, 2, 3 And arr2 refers to an char array object of 2 elements: 'A', 'B' Statement arr1 = arr2; gives compilation error as char [] is not compatible with int [] even though char is compatible with int.
+
+// Which of the following array declarations give compilation error?
+
+    // A) int [][] arr1;
+    // B) int [] arr2 [];
+    // C) int [][][] arr3;
+    // D) int arr4[3];
+        //Answer: D - Array size can't be specified at the time of declaration.
+
+// What is the output if below program is run with the command line:
+java ArrayTest10 Red Green Blue
+
+public class ArrayTest10 {
+    public static void main(String[] args) {
+        System.out.print(args[1] + ", " + args[2]);
+    }
+}
+    // Answer: Green, Blue - args refers to a String array object of size 3. Element at index 0 refers to "Red", Element at index 1 refers to "Green" & Element at index 2 refers to "Blue". In System.out.print statement we are printing element at index 1 and 2 and thus output is: Green, Blue
+
+// What is the output if below program is run with the command line:
+java ArrayTest11
+
+public class ArrayTest11 {
+    public static void main(String[] args) {
+        System.out.println(args.length);
+    }
+}
+    // Answer: We have not passed any command-line arguments, hence args refers to an array object of Size 0. args.length prints 0. args is not null and hence no NullPointerException. Also we are not accessing array element so no question of ArrayIndexOutOfBoundsException as well.
+
+// Which of the following is true for code below?
+
+public class ArrayTest12 {
+    public static void main(String[] args) {
+        char arr[] = {'A', 'E', 'I', 'O', 'U'};
+        int i = 0;
+        while (arr[i++] != '\u0000') {
+            System.out.println(i);
+        }
+        System.out.println(i);
+    }
+}
+    // Answer: 1st iteration, arr[0] != '\u0000' (true), i = 1, Prints: 1 2nd iteration, arr[1] != '\u0000' (true), i = 2, Prints: 2 3rd iteration, arr[2] != '\u0000' (true), i = 3, Prints: 3 4th iteration, arr[3] != '\u0000' (true), i = 4, Prints: 4 5th iteration, arr[4] != '\u0000' (true), i = 5, Prints: 5 6th iteration, arr[5] != '\u0000' -> this throws ArrayIndexOutOfBoundsException. No compilation error, and 0 and 6 are not in the output. Output contains number from 1 to 5 and after that exception is thrown.
+
+// Which of the following is true for code below?
+
+public class ArrayTest9 {
+    public static void main(String[] args) {
+        byte [] arr = new byte[0];
+        System.out.println(arr[0]);
+    }
+}
+    // Answer arr refers to an array object of size 0. That means arr stores some memory address. So we will not get NullPointerException in this case. But index 0 is not available for an array object of size 0 and thus ArrayIndexOutOfBoundsException is thrown at runtime.
+
+// Which of the following is not a valid array declaration?
+
+    // A) int [] arr1 = new int[8];
+    // B) int [][] arr2 = new int[8][8];
+    // C) int [] arr3 [] = new int[8][];
+    // D) int arr4[][] = new int[][8];
+        // Answer: D - 1st array dimension must be specified at the time of declaration.
+
+
+
+
