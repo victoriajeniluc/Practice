@@ -909,6 +909,30 @@
       java CommandLine1 Red Green 
   * GREAT EXAMPLE WOULD BE THE FIBONACCI EXAMPLE!!! 
 
+* PROBLEM WITH USING COMMAND LINE TO ACCEPT USER INPUT
+  * All values end up being a string and need to be converted 
+  * Only time we can accept it is during execution on the command line 
+
+* SOLUTION: SCANNER CLASS
+----------------------------------------
+**USER INPUT** 
+  * import the util package for the class scanner: import java.util.Scanner; 
+
+  * when you create your first scanner object.. you have to do this: 
+    * SYNTAX: 
+      Scanner scanner = new Scanner(System.in);
+        * MUST HAVE SYSTEM.IN or it will give you a compliation error 
+
+  * there are different types of "built in methods" that allows you to accept certain data types 
+    * Example: 
+      short s1  = scanner.nextShort() // Accept short value from the user 
+
+  ** IF YOU DECIDE TO USE A DATA VALUE THAT IS OUTSIDE THE RANGE OF THE DATA TYPE... it will give you an error and stop the program 
+
+  ** AFTER YOU ARE DONE USING THE USER INPUT.. YOU MUST CLOSE IT OTHERWISE IT WON'T ALLOW YOU TO INVOKE ANY OF THE OTHER OBJECTS 
+    * Example: 
+      scanner.close(); //Close the scanner 
+
 ----------------------------------------
 
 **PACKAGES** 
