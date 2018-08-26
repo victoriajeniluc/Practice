@@ -1008,6 +1008,9 @@
 * stepover will go over step by step of what the variables will look like in the method(or anything asked to do in that program)
 
 * run the line allows us to pause at that line without breakpointing or going over other lines 
+
+* execute the expression and see the result.. highlight it and then press evaluate the expression to give the result.. you can also modify the data in the evaluate expression section.. that way you can debug properly 
+  * MAKE SURE TO REMOVE THE EXPRESSION FROM THIS.... IF YOU LEAVE IT IN THERE.. THERE COULD BE A  CHANCE YOU MIGHT GET ERRORS DUE TO IT. 
 ----------------------------------------
 
 ## Files in Program 
