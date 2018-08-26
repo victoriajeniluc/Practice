@@ -620,5 +620,154 @@ public class ArrayTest9 {
         // Answer: D - 1st array dimension must be specified at the time of declaration.
 
 
+// Which of the following correctly imports Animal class from com.jimcorbett package?
+    // A) Import com.jimcorbett.Animal;
+    // B) import com.jimcorbett; 
+    // C) import com.jimcorbett*; 
+    // D) Import com.jimcorbett.Animal;
+        // Answer: C - Following import statements are correct: import com.jimcorbett.*; import com.jimcorbett.Animal; Note, all small case letters in import keyword.
+
+// Which of the following is the correct package declaration to declare Test class in com.university.exam package?
+    // A) package com.university.exam.Test;
+    // B) package com.university.exam; 
+    // C) package com.university.exam.*;
+    // D) Package com.university.exam;
+        // Answer: B - To declare Test class in com.university.exam package, use following declaration: package com.university.exam; No wildcard (*) allowed in package declaration. Don't include class name in package declaration. Note, all small case letters in package keyword.
+
+// System class belongs to which package? 
+    // A) java.lang
+    // B) java.io
+    // C) com.java.lang
+    // D) com.lang
+        // Answer: A - java.lang package contains classes that are fundamental to the design of the Java programming language. Some of the classes available under java.lang package are: String, System, Object, StringBuffer, all Wrapper classes etc.
+
+
+// What is the output of the following code, if input String is "Welcome"?
+
+import java.util.Scanner;
+public class Scan01 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner();
+        String msg = scan.nextLine();
+        System.out.println(msg + "!");
+        scan.close();
+    }
+}
+    // Answer: new Scanner(); statement doesn't have any parameter and hence compilation error.
+
+//What will be the result of compiling and executing following program?
+
+public class String1 {
+    public static void main(String[] args) {
+        String str = "Java Rocks!";
+        System.out.println(str.length() + " : " + str.charAt(10));
+    }
+}
+    //Answer: String class has length() method, which returns number of characters in the String. So length() method returns 11. String class has charAt(int index) method, which returns character at passed index. str.charAt(10) looks for character at index 10. index starts with 0. ! sign is at index 10. Hence output is: 11 : !
+
+// What will be the result of compiling and executing following program?
+
+public class String2 {
+    public static void main(String[] args) {
+        String s1 = "JaCk";
+        String s2 = "jAcK";
+        System.out.println(s1.equals(s2));
+    }
+}
+    // Answer: equals(String str) method of String class matches two String objects and it takes character's case into account while matching. Alpahbet A in upper case and alphabet a in lower case are not equal according to this method. As String objects referred by s1 and s2 have different cases, hence output is false.
+
+//What will be the result of compiling and executing following program?
+
+public class String3 {
+    public static void main(String[] args) {
+        String fName = "Udayan";
+        String lName = "Khattry";
+        System.out.println(fName = lName);
+    }
+}
+    // Answer: Both fName and lName are of reference type. fName refers to "Udayan" and lName refers to "Khattry" In System.out.println() statement, we have used assignment operator (=) and not equality operator (==). So result is never boolean. fName = lName means copy the contents of lName to fName. As lName is referring to "Khattry" and so after the assignment, fName starts referring to "Khattry" as well. System.out.println() finally prints the String referred by fName, which is "Khattry". This option is is not available, hence correct answer is D(none of the above).
+
+//Consider following code snippet:
+
+package com.udayan.test;
+ 
+public class Exam {
+    public static void main(String [] args) {
+        System.out.println("All the best!");
+    }
+}
+// Location of Exam.java file:
+
+// D:\WORK\QUIZ\SEC07
+// ├───classes
+// └───src
+//     └───com
+//         └───udayan
+//             └───test
+//                     Exam.java
+// You are currently at Sec07 folder.
+
+// D:\WORK\Quiz\Sec07>
+
+// Type javac command from above location to generate Exam.class file structure under classes directory.
+
+// D:\WORK\QUIZ\SEC07
+// ├───classes
+// │   └───com
+// │       └───udayan
+// │           └───test
+// │                   Exam.class
+// │
+// └───src
+//     └───com
+//         └───udayan
+//             └───test
+//                     Exam.java
+
+    // Answer: javac -d classes\ src\com\udayan\test\Exam.java, correct. Go through the lectrues for details
+
+// Consider following code snippet:
+
+package com.udayan.test;
+ 
+public class Exam {
+    public static void main(String [] args) {
+        System.out.println("All the best!");
+    }
+}
+// Location of files:
+
+// D:\WORK\QUIZ\SEC07
+// ├───classes
+// │   └───com
+// │       └───udayan
+// │           └───test
+// │                   Exam.class
+// │
+// └───src
+//     └───com
+//         └───udayan
+//             └───test
+//                     Exam.java
+// You are currently at WORK folder.
+
+// D:\WORK>
+
+// Which of the following java command will show All the best! on  the console?
+    // Answer: Option D is correct as it correctly specifies the classpath (Quiz\Sec07\classes\) which contains whole path of the class(com\udayan\test\Exam.class).
+
+//What is the output of the following code, if input String is A? Note, ASCII value of A is 65.
+
+import java.util.Scanner;
+public class Scan02 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        scanner.close();
+        System.out.println(num);
+    }
+}
+    //Answer: Even though int and char are compatible and following works: int x = 'A'; System.out.println(x); // -> 65 But Scanner class accepts all the inputs as String and later on converts it to a particular type. For nextBoolean() method, input String is converted to boolean type For nextDouble() method, input String is converted to double type For nextInt() method, input String is converted to int type and so on. So in this case, internally nextInt() method tries to convert "A" to int and java.util.InputMismatchException is thrown.
+
 
 

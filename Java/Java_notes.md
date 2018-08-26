@@ -1011,6 +1011,8 @@
 
 * execute the expression and see the result.. highlight it and then press evaluate the expression to give the result.. you can also modify the data in the evaluate expression section.. that way you can debug properly 
   * MAKE SURE TO REMOVE THE EXPRESSION FROM THIS.... IF YOU LEAVE IT IN THERE.. THERE COULD BE A  CHANCE YOU MIGHT GET ERRORS DUE TO IT. 
+
+* IF YOU DON'T REMOVE THE BREAKPOINTS FROM THE FILES YOU ARE DEBUGGING... THERE IS A CHANCE THAT YOU WILL BE STOPPING PROGRAMS FROM RUNNING FURTHER IF THEY ARE USING THOSE FILES 
 ----------------------------------------
 
 ## Files in Program 
@@ -1028,9 +1030,11 @@
 * javadoc command is used to generate documents for code   
 * you can have a lot of white space in side the if-else blocks.. it will still be ran - it won't throw an error 
 * Examples of things we can do with the String class and the SecureRandom class - in the miscellanos project 
+* you got to make sure the data type is able to work with all the methods when you method chaining 
 
 ## SHORTCUT 
 * sout + tab will type out System.out.println("Hello World");
 * up arrow + F6 will select all the variables / classes / method naming convention and change it
 * psvm + tab will generate the main method
-* ctrl + shift + / will make it into a comment the highlighting part of the code  
+* ctrl + shift + / will make it into a comment the highlighting part of the code
+* control + r runs the program   
