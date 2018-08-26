@@ -999,6 +999,16 @@
 
    3. CLASS DECLARATION 
 ----------------------------------------
+**DEBUG** 
+
+* a breakpoint is a marker, that we can set, to specify where the execution should pause, when we run our application in the debugger mode 
+
+* use the run debug filename in intellij to run the debugger that will put pause on the lines that you are highlighting or clicking on.
+
+* stepover will go over step by step of what the variables will look like in the method(or anything asked to do in that program)
+
+* run the line allows us to pause at that line without breakpointing or going over other lines 
+----------------------------------------
 
 ## Files in Program 
 * src folder is where you save all the java files 
@@ -1014,6 +1024,7 @@
 ## Miscellanos 
 * javadoc command is used to generate documents for code   
 * you can have a lot of white space in side the if-else blocks.. it will still be ran - it won't throw an error 
+* Examples of things we can do with the String class and the SecureRandom class - in the miscellanos project 
 
 ## SHORTCUT 
 * sout + tab will type out System.out.println("Hello World");
