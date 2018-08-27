@@ -41,3 +41,4 @@
 25. what is the difference between bin and src? what is the importance with them in java? 
 26. Find examples for classpath... didn't really put a lot of notes regarding to this part of the lecture 
 27. Why is it important to close the scanner after using it? It seems to me that when i commented it out... it was able to execute other things after the last scanner.nextBoolean()
+28. why are we using the word this(); for the constructor made in student example for OOP? the instructor didn't explain it well of why it is needed in order to remove the university out of the argument constructor and place it in the default and assign it to standford
