@@ -16,7 +16,7 @@
 		- the superset of JRE and contains everything that is in the JRE plus tools such as the compiler and debugger; **necessary developing java applications**!!
 
 ----------------------------------------
-## Java Lanaguage 
+## Java Lanaguage - SYNTAX 
 ----------------------------------------
 **IDENTIFIERS** 
 * IDENTIFIERS are case sensitive.
@@ -1013,6 +1013,128 @@
   * MAKE SURE TO REMOVE THE EXPRESSION FROM THIS.... IF YOU LEAVE IT IN THERE.. THERE COULD BE A  CHANCE YOU MIGHT GET ERRORS DUE TO IT. 
 
 * IF YOU DON'T REMOVE THE BREAKPOINTS FROM THE FILES YOU ARE DEBUGGING... THERE IS A CHANCE THAT YOU WILL BE STOPPING PROGRAMS FROM RUNNING FURTHER IF THEY ARE USING THOSE FILES 
+
+----------------------------------------
+## JAVA LANAGUAGE - OBJECT ORIENTED PROGRAMMING - PART 1 
+----------------------------------------
+
+* WHAT IS Objected Oriented Programming - OOP?
+  * programming lanaguage model organized around the concept of objects as the basic elements of the programs 
+    * EXAMPLE: 
+      > Objects represents physical entites such as Student / Dog / Car / etc 
+      > Non-physical entities such as Bank Account / Video Course / eBooks / etc 
+
+  *ALL THE OBJECTS HAVE STATE AND BEHAVIORS* 
+    * Example: 
+      > Object: dog 
+        State: breed, name, color, age 
+        Behavior: barking, eating, waggin tail 
+      > Object: account 
+        State: accountNumber, customerId, balance 
+        Behavior: debit, credit 
+      > Object: harddisk 
+        State: brand, capacity, usedSpace, readSpeed, writeSpeed
+        Behavior: readData, writeData 
+
+* CLASSES 
+  * a blueprint or template of the objects of *the same type*. 
+    * Example: 
+      > Dog class with instant variables and methods such as:
+        * Instance variables-state for each object: name, age, breed, color 
+        * Instance methods- behaviors for each object: bark(), eat(), wagTail() 
+
+        * 3 Dog objects: 
+          > Name: Rusty, Age: 5, Breed: Golden Retriever, Color: Dark Golden 
+          > Name: Hunter, Age: 2, Breed: German Shepherd, Color: Dark Golden 
+          > Name: Bubbly, Age: 10, Breed: Poodle, Color: White 
+
+          > Each dog object will have methods for bark, eat, wagtail 
+  * HOW TO CREATE A CLASS? 
+    * Start with the class declaration 
+
+      public class Dog {
+
+      } 
+
+    * Define the propertities and the methods within the curly braces of the class 
+
+      public class Dog {
+        public String name; 
+        public int age; 
+        public String breed; 
+        public String color; 
+
+          ** VOID IS BASICALLY THERE BECAUSE WE DONT EXPECT IT TO RETURN ANYTHING 
+        public void bark() {
+          System.out.println(name + " is barking.");
+        }
+
+        public void eat() {
+          System.out.println(name + " is eating.");
+        }
+
+        public void wagTail() {
+          System.out.println(name + " is wagging tail.");
+        }
+      } 
+
+* DID THE CLASS OR OBJECT COME FIRST? 
+  * DESIGN PHASE: 
+    * WE THINK OF DIFFERENT OBJECTS AND FIND THE SIMILARITY OF IT... TO THEN THINK OF THE CLASS 
+
+  * DEVELOPMENT PHASE: 
+    * WE HAVE TO CREATE THE CLASS IN ORDER TO COME UP WITH THE OBJECTS 
+
+  *so either of them can come before the other... depends on what you are talking about* 
+
+* CONSTRUCTOR: 
+  * Objects are also known as *instances*
+  * To create an instance of the class.. **new** keyword is used
+    * Example of creating two instances of the Dog class: 
+      Dog d1 = new Dog(); 
+      Dog d2 = new Dog(); 
+
+  * new keyword invokes the constructor of the class 
+  * Java compiler provides a constructor, if no constructors have been defined for the class... it is known as a default constructor: 
+    Example: default constructor provided by Java Compiler for Dog class is: 
+
+      public Dog() {
+
+      }
+  **CONSTRUCTORS THAT HAVE NO PARAMETERS OR ACCEPT ARGUMENTS ARE KNOWN AS NO ARGUMENT CONSTRUCOTRS**
+
+  * THREE WAYS OF CREATING OBJECTS:   
+  1. using a no argument constructor and assigning values to the properties set in that constructor 
+    public Dog() {
+        System.out.println("Inside the Dog() constructor");
+        name = "Hunter";
+        breed = "Bulldog";
+        color = "Brown";
+        age = 5;
+    }
+    Dog d1 = new Dog(); 
+    System.out.println(d1.name + ": " + d1.breed + " : " + d1.color + " : " + d1.age);
+  2. literally assigning the values outside of the constructor
+     public Dog() {
+
+      }
+      Dog d2 = new Dog(); 
+      d2.name = "Bubbly";
+      d2.breed = "Poodle";
+      d2.color = "White";
+      d2.age = 10;
+      System.out.println(d2.name + ": " + d2.breed + " : " + d2.color + " : " + d2.age);
+  3. creating an argument constructor that will have parameters and being able to pass in arguments into it
+    public Dog(String dogName, String dogBreed, int dogAge, String dogColor) {
+        name = dogName;
+        breed = dogBreed;
+        age = dogAge;
+        color = dogColor;
+    }
+    Dog d3 = new Dog("Rusty", "Husky", 3, "black");
+        System.out.println(d3.name + ": " + d3.breed + " : " + d3.color + " : " + d3.age);
+        d3.wagTail();
+
 ----------------------------------------
 
 ## Files in Program 
