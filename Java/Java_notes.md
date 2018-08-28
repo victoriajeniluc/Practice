@@ -1151,6 +1151,82 @@
         * Push: adding element - in this case, method and constructor - at the top of the stack
         * Pop : removing top most element from stack 
         * STACK works on LIFO - last in first out principle 
+
+* METHODS 
+  * block of code - set of statements - that can be called to perform some specific task 
+
+  * following characteristics of a method: 
+    * accept 0 to more parameters
+    * returns one or no value 
+
+  * METHOD DECLARATION: 
+
+    [access_specificer][static] <return_type> <method_name> ([parameters]) {
+        ....
+    }
+      * access_specifier and static can be interchange in order 
+      * return type can be a primitive or a reference type 
+        * types: 
+          - int 
+          - float 
+          - String
+          - String []
+          - char [] [] 
+          - Student -- object 
+          - no return value - use void 
+    * method name should be this format: 
+      * lower case then rest uppercase 
+        * EX: 
+          - print
+          - bark
+          - printDetails 
+    * parameters are basically what the method can accept.. 
+      * EX: 
+        - bark(int i1, int i2)
+        - printDetails(Student stud)
+        ** SO SPECIFY THE TYPE THEN A NAME FOR THAT PARAMETER
+
+  * TYPES OF METHODS: 
+    1. Instance - non-static - methods 
+      * Ex: 
+
+        public class Dog {
+          public void bark() {
+            ....
+          }
+        }
+      * Associated with the instance of the class 
+      * Can only be invoked after instance is created 
+      * Syntax to invoke instance method: 
+
+        <Reference_Variable_Name>.<method_name>([arguments]); 
+
+        Ex: 
+          Dog d1 = new Dog(); // Creates instance of Dog class 
+          d1.bark();  
+
+          String str = "Udayan"; // Creates instance of String class 
+          char c = str.charAt(2);
+
+    2. Static methods 
+      * Ex: 
+
+        public class Calculator {
+          public static int add(int num1, int num2) {
+            int res = num1 + num2; 
+            return res; 
+          }
+        }
+
+      * Associated with the class 
+      * Instance of the class in not needed to invoke static methods 
+      * Snytax to invoke instance methods: 
+        <Class_Name>.<method_name>([parameters]); 
+          * Ex: 
+
+            int res1 = Calculator.add(5,10);
+
+            int res2 = Integer.parseInt("100");
 ----------------------------------------
 
 ## Files in Program 

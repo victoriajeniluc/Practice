@@ -44,3 +44,4 @@
 28. why are we using the word this(); for the constructor made in student example for OOP? the instructor didn't explain it well of why it is needed in order to remove the university out of the argument constructor and place it in the default and assign it to standford
 29. Find the display view on IntelliJ especially with debugging!
 30. When we are creating constructors... do we really need to create every individual one like how we did for A example in challenge 9 where we test for every scenario? 
+31. Okay totally understand why we use non-static methods... but I am confused of why static methods are very important to classes in java.. are they considered "CLASS METHODS IN A WAY"?
