@@ -1251,4 +1251,5 @@
 * up arrow + F6 will select all the variables / classes / method naming convention and change it
 * psvm + tab will generate the main method
 * ctrl + shift + / will make it into a comment the highlighting part of the code
-* control + r runs the program   
+* shift + control + r runs the program  you are currently working on
+* ctrl + 6 + v will pull up the VCS control popup  
