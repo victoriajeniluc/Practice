@@ -1135,6 +1135,22 @@
         System.out.println(d3.name + ": " + d3.breed + " : " + d3.color + " : " + d3.age);
         d3.wagTail();
 
+* STACK AND HEAP 
+  * In java... there are two types of memory spaces where items are created: 
+  * reference the pic(heapvsstack.png)
+    * HEAP - objects 
+      * top is for class templates and static variables 
+      * bottom is for objects when we execute 
+    * STACK - constructors and methods 
+      * has smaller space compared to the heap 
+        * ALL CONSTRUCTORS AND NON-STATIC METHODS OF CLASS HAS ACCESS TO THIS VARIABLE
+          * this is not defined... but it is implicity avaiable... it stores the address of the current executing object 
+            * current executing object is the instance on which the constructor / method is invoked - in the picture... it is student 
+          * this(); is a constructor call 
+          * this in the stack is the reference to the currently executing object 
+        * Push: adding element - in this case, method and constructor - at the top of the stack
+        * Pop : removing top most element from stack 
+        * STACK works on LIFO - last in first out principle 
 ----------------------------------------
 
 ## Files in Program 
