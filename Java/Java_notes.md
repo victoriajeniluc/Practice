@@ -1227,6 +1227,55 @@
             int res1 = Calculator.add(5,10);
 
             int res2 = Integer.parseInt("100");
+
+* NON-STATIC VS. STATIC METHODS 
+  * when should we use one or the other? 
+    * if the method is accessing instance variable using the reference then it must be a non-static method 
+    * if the method doesn't use a single instance variable.. .then it should be static 
+      * ALSO if multiple classes use this method... then it should be static!!! 
+
+      * IF WE USE CALCULATOR METHOD - from the exam.java - WITH AN INSTANCE VARIABLE BEING CREATED... IT WOULD BE USE LESS.. for example:
+
+      public class Test2() {
+        public static void main(String[] args) {
+          int temp1 = 45; 
+          int temp2 = 51; 
+          int temp3 = 47; 
+
+          Exam e1 = new Exam(null, 0, 0, 0);
+
+          int avgTemp = e1.calculateTotal(temp1, temp2, temp3) / 3;
+
+          System.out.println("Average temp is: " + avgTemp);
+        }
+      }
+        ** THERE FOR IT IS SMART TO USE IT AS A STATIC METHOD INSTEAD OF AN INSTANCE METHOD! 
+
+    * sometimes you can use the instance variable to access the static method... but it will throw an error since it is confused between the static and the instance methods ... so use the class name to access the static method 
+
+* METHOD DECLARATION VS. METHOD SIGNATURE 
+  * Method Declaration: 
+    * has 6 components.. 
+      1. access specifier & static or non static 
+      2. curly braces and method body 
+      3. return type 
+      4. method name 
+      5. ([parameters - optional])
+      6. exception list - optional 
+        * Ex: 
+            public void displayGreeting() { .... 
+                                        }
+
+  * Method Signature: 
+    * has only two things: 
+      1. method name
+      2. parenthesis 
+        * Ex: 
+          displayGreet(); 
+
+  * In each java file, there can be multiple of classes in the file.. EXCEPT there must be only 1 public class and that class must match the naming of the java file 
+  * In each java file, there can be multiple of methods in the file.... they can be multiple static and non static.. as long as it is referencing the right stuff - check out the Dog.java and DogTest1.java file in lecture06 in OOP 
+
 ----------------------------------------
 
 ## Files in Program 
