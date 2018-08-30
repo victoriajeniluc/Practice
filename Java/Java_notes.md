@@ -1276,6 +1276,42 @@
   * In each java file, there can be multiple of classes in the file.. EXCEPT there must be only 1 public class and that class must match the naming of the java file 
   * In each java file, there can be multiple of methods in the file.... they can be multiple static and non static.. as long as it is referencing the right stuff - check out the Dog.java and DogTest1.java file in lecture06 in OOP 
 
+* VARIABLES 
+  * Class or static variables 
+      * Ex: 
+        public static String univ = "Standford University"; 
+      * Class variable is shared by all these instances of the class 
+
+  * Instance variables 
+      * Ex: 
+        public String lname; 
+        public String fname; 
+        public int age; 
+      * Each instance variable has its own copy in the heap 
+
+  * Local or Automatic variables - Method parameters are included here 
+      * Ex: 
+        String name = lName + ", " + fname; 
+      * It is only local of where it declared... so name is only going t obe visible to the printDetails in the picture(lecture8variables1.png) whereas s1 and s2 are local variables too of the main method... so it can't access anything in the printDetails
+
+  * SCOPE 
+    * the variable's scope represents the section of the code of which the variable is visible 
+      * STATIC / CLASS: 
+        * accessed from all the methods and constructo of the class using the class name + . + variable name syntax 
+      * INSTANCE: 
+        * accessed as long as their reference variable is in the scope... but it can be different based on what is getting accessed at that time and what method that the instance variables can be accessed. One method can be pushed on top of the stack and the variables are being accessed then... but there are still variables in the main method -which is on the bottom that might not be accessed -such as s1 and s2 in (lesson8variables1.png) Though the instance variables are no longer accessible once the scope is no longer available or it is out of the scope - look out for the ending curly bracket 
+      * LOCAL: 
+        * REFER TO THE FILE IN OOP/LECTURE10/LOCALVARIABLESCOPE 
+
+  * VARIABLE LIFETIME
+  * indicates how long the variable exists before it is removed from the memory stack and heap 
+    * STATIC / CLASS: 
+      * Starts lifetime: when the class template is loaded in the memory and it stays until the program is terminated 
+    * INSTANCE: 
+      * Starts when the object is created in the heap space and their lifetime is over when there is no one reffering to these objects - some cases can be when the method pops off the stack and the links to the variable is gone 
+    * LOCAL: 
+      * REFER TO THE FILE IN OOP/LECTURE10/LOCALVARIABLESCOPE 
+
 ----------------------------------------
 
 ## Files in Program 
