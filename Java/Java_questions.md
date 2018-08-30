@@ -48,3 +48,6 @@
 32. What is the importance with TODO... like why does the color change when I make it as a comment? 
 33. Why would IntelliJ ask us to turn the public method to a private one for Example DogTest1? 
 34. Please understand when to use static and nonstatic methods 
+35. Understand what is static / class shadowing a little more... i understood it a bit but he kind confused of me why he kept using the static / class variable = 2017 and printed it everywhere there was a local variable 
+36. Understand what is instance variables shadowing a little more... especially the setCounter thing .... where it was suppose to be 11 but not 1. 
+37. Local variables Test - lecture 11 in localtest.java... why does this allow us to access the int i without the final keyword? for test 4? 

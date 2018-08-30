@@ -1293,6 +1293,10 @@
       * Ex: 
         String name = lName + ", " + fname; 
       * It is only local of where it declared... so name is only going t obe visible to the printDetails in the picture(lecture8variables1.png) whereas s1 and s2 are local variables too of the main method... so it can't access anything in the printDetails
+      * Local variables are not initiaized to default values; 
+      * Local variables needs to be assigned with some values before being used 
+        - refer to lecture11 for LocalTest.java
+      * make sure the local variable is initialized before accessed.. but if its not accessed.. it wont give you a compliation error - it will just throw a warning that the variable is not used
 
   * SCOPE 
     * the variable's scope represents the section of the code of which the variable is visible 
@@ -1311,6 +1315,49 @@
       * Starts when the object is created in the heap space and their lifetime is over when there is no one reffering to these objects - some cases can be when the method pops off the stack and the links to the variable is gone 
     * LOCAL: 
       * REFER TO THE FILE IN OOP/LECTURE10/LOCALVARIABLESCOPE 
+
+* SHADOWING - in lecture 11 for examples 
+  **TWO VARIABLES OF THE SAME TYPE CANNOT BE IN THE SAME SCOPE EVEN IF THEY ARE IFFERENT TYPES** 
+    * EX - AN ERROR THROWN WHEN THERE ARE TWO VARIABLES WITH THE SAME NAME ARE DEFINED IN THE SAME SCOPE SUCH AS LINE 1318 AND 1320:   
+    public class Test1 {
+      public static int i1 = 10;
+      public int i2 = 20;
+      public int i1 = 30;
+
+      public static void main(String[] args) {
+          int i3 = 40;
+      }
+    }
+
+    * EX - AN DUPLICATION ERROR IF YOU DO IT FOR LOCAL VARIABLES TOO SINCE THE SAME NAME IS DEFINED IN BETWEEN THE CURLY BRACES ... EVEN WHEN YOU DO THIS TOO: 
+      public static void main(String[] args) {
+          int i3 = 40;
+          {
+            int i3 = 30;
+          } 
+      }
+
+    * EX - AN DUPLICATION ERROR IF YOU DO IT FOR LOCAL VARIABLES WITH A LOOP... 
+        public static void main(String[] args) {
+            int i3 = 40;
+            for(int i3 = 0; i3 < 2; i3++) {
+              ......
+            }
+        }
+    * EX - WILL NOT THROW AN ERROR IF THE SCOPES ARE DIFFERENT - EVEN THE SAME VARIABLE NAME: 
+    public class Test1 {
+      public static int i1 = 10;
+      public int i2 = 20;
+      public int i3 = 30;
+
+      public static void main(String[] args) {
+          int i3 = 40;
+          int i1 = 50; - KNOWN AS SHADOWING OFF A STATIC VARIABLE 
+
+          int i2 = 30; - KNOWN AS A SHADOWING OFF AN INSTANCE VARIABLE 
+      }
+
+    }    
 
 ----------------------------------------
 
@@ -1338,3 +1385,4 @@
 * ctrl + shift + / will make it into a comment the highlighting part of the code
 * shift + control + r runs the program  you are currently working on
 * ctrl + 6 + v will pull up the VCS control popup  
+* command + n will help generate a constructor for you 
