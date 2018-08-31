@@ -1380,6 +1380,19 @@
 
 * WHY ARE INITIALIZATION BLOCKS NEEDED: 
   * In Java, constructors can be overloaded where we can have multiple of constructors and sometimes ther eare some statemets which needs to be be executed in all the constructors ... instead of copying the statement in all the constructors, it is easier to provide statements in one place like the instance initialization block 
+
+* GARBAGE COLLECTION
+  * the process of scanning HEAP memory and deleting unreachable objects. This is done automatically by Garbage Collector. 
+  * NO GARBAGE COLLECTION FOR THE STACK SPACE ONLY HEAP!
+    * THOUGH, when there is no space in the stack memory.. Java throws a stack overflow error 
+  * It is not guarantee that everything is going to be cleared out by the garbage collection... to make a call to run it, do this: Runtime.getRuntime().gc(); 
+  System.gc(); 
+    * Syntax to cal static method: 
+      <Class_name>.<method_name>(<parameters>)
+  * IF THERE IS NO SPACE IN THE HEAP MEMORY..
+    * Java will throw a java.lang.OutofMemoryError 
+  * [EXAMPLE OF GARBAGE COLLECTION](GarbageCollection.png)
+
 ----------------------------------------
 
 ## Files in Program 
@@ -1407,3 +1420,4 @@
 * shift + control + r runs the program  you are currently working on
 * ctrl + 6 + v will pull up the VCS control popup  
 * command + n will help generate a constructor for you 
+* shift + command + up / down arrow allows you to move the line of code 
