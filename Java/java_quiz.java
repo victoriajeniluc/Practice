@@ -769,5 +769,320 @@ public class Scan02 {
 }
     //Answer: Even though int and char are compatible and following works: int x = 'A'; System.out.println(x); // -> 65 But Scanner class accepts all the inputs as String and later on converts it to a particular type. For nextBoolean() method, input String is converted to boolean type For nextDouble() method, input String is converted to double type For nextInt() method, input String is converted to int type and so on. So in this case, internally nextInt() method tries to convert "A" to int and java.util.InputMismatchException is thrown.
 
+// Which of the following can be used as a constructor for the class given below?
 
+public class Animal {
 
+}
+    // Answer: public Animal(String str){ } - Constructors don't have return type.This is a valid syntax of parameterized constructor
+
+// What will be the result of compiling and executing the following program?
+
+public class Greetings {
+ String msg = null;
+ 
+ public Greetings() {
+ this("Good Morning!");
+ }
+ 
+ public Greetings(String str) {
+ msg = str;
+ }
+ 
+ public void displayMsg() {
+ System.out.println(msg);
+ }
+ 
+ public static void main(String [] args) {
+ Greetings g1 = new Greetings();
+ Greetings g2 = new Greetings("Good Evening!");
+ g1.displayMsg();
+ g2.displayMsg();
+ }
+}
+    // Answer: Good Morning! Good Evening! - Greetings g1 = new Greetings(); invokes no-arg constructor. No-arg constructor calls parameterized constructor with the argument "Good Morning!" Parameterized constructor assigns "Good Morning!" to msg variable of the object referred by g1. Greetings g2 = new Greetings("Good Evening!"); invokes parameterized constructor, which assigns "Good Evening!" to msg variable of the object referred by g2. g1.displayMsg(); prints Good Morning! g2.displayMsg(); prints Good Evening!
+
+// What will be the result of compiling and executing the following program?
+
+public class Greetings2 {
+    String msg = null;
+    public Greetings2() {
+    }
+    
+    public Greetings2(String str) {
+        msg = str;
+    }
+    
+    public void displayMsg() {
+        System.out.println(msg);
+    }
+    
+    public static void main(String [] args) {
+        Greetings2 g1 = new Greetings2();
+        Greetings2 g2 = new Greetings2("Good Evening!");
+        g1.displayMsg();
+        g1.displayMsg();
+    }
+}
+    // Answer: null null - Greetings2 g1 = new Greetings2(); invokes no-arg constructor. Property msg (of object referred by g1) is assigned to null. Greetings g2 = new Greetings("Good Evening!"); invokes parameterized constructor, which assigns "Good Evening!" to msg of object referred by g2. g1.displayMsg(); prints null Again we have same call g1.displayMsg(); which prints null. NOTE: We haven't called displayMsg() on object referred by g2.
+
+// What will be the result of compiling and executing the following program?
+
+public class Test1 {
+    int i = -1;
+    public Test1(int num) {
+        this.i = num;
+    }
+    
+    public void print() {
+        System.out.println(this.i);
+    }
+    
+    public static void main(String[] args) {
+        Test1 obj = new Test1();
+        obj.print();
+    }
+}
+    // Answer: compliation error - new Test1(); invokes no-arg constructor but as we have parameterized constructor available in the Test1 class, java compiler doesn't add default constructor and hence we get Compilation error.
+
+// What will be the result of compiling and executing the following program?
+
+public class Test2 {
+    public String name;
+    public void Test2() {
+        name = "Jack";
+    }
+    
+    public static void main(String [] args) {
+        Test2 obj = new Test2();
+        System.out.println(obj.name);
+    }
+}
+    // Answer: null -public void Test2() is method and not constructor, as return type is void. method can have same name as the class name, so no issues with Test2() method declaration. As there are no constructors available for this class, java compiler adds following constructor. public Test2() {} Test2 obj = new Test2(); invokes the default constructor but it doesn't change the value of name property (by default null is assigned to name property) System.out.println(obj.name); prints null.
+
+// What will be the result of compiling and executing the following program?
+
+public class Test3 {
+    
+    public static void method1(int num) {
+        num = 2;
+        System.out.println(num);
+    }
+    
+    public static void method2(int num) {
+        num++;
+        System.out.println(num);
+    }
+    
+    public static void main(String[] args) {
+        int i1 = 1;
+        Test3.method1(i1);
+        System.out.println(i1);
+        Test3.method2(i1);
+        System.out.println(i1);
+    }
+}
+    // Answer: 2 1 2 1 - It is pass-by-value scheme. On method invocation, parameter variable num gets a copy and changes are made to this copy inside the method. Original value of i1 stay intact.
+
+// What will be the result of compiling and executing Test4.java?
+
+//Message.java
+public class Message {
+    String msg = "Welcome!";
+    
+    public void print() {
+        System.out.println(msg);
+    }
+}
+ 
+//Test4.java
+public class Test4 {
+    public static void m1(Message m) {
+        m.msg = "Good Night!";
+    }
+    
+    public static void m2(Message m) {
+        m = new Message();
+        m.msg = "Good Morning!";
+    }
+    
+    public static void main(String [] args) {
+        Message obj = new Message();
+        obj.print();
+        Test4.m2(obj);
+        obj.print();
+        Test4.m1(obj);
+        obj.print();
+    }
+}
+    // Answer: Welcome! Welcome! Good Night! - It is pass-by-reference scheme. Method m1(Message) modifies msg property of passed object, whereas method m2(Message) modifies msg property of another object. Initially, msg = "Welcome!" call to m2() doesn't change msg properly, so msg is still "Welcome!" but call to m1() changes the msg property to "Good Night!" Hence in the output, we get: Welcome! Welcome! Good Night!
+
+// What will be the result of compiling and executing the following program?
+
+public class Test5 {
+    public static void m1() {
+        System.out.println("static method.");
+    }
+    
+    public static void main(String[] args) {
+        Test5 obj = null;
+        obj.m1();
+    }
+}
+    // Answer: static method - m1() is static method of class Test5. So correct syntax to call method m1() is Test5.m1(); but static methods can also be invoked using reference variable: obj.m1(); Warning is displayed in this case. Even though obj has null value, we don't get NullPointerException as objects are not needed to call static methods.
+
+// What will be the result of attempting to compile and run the following program?
+
+public class Test6 {
+    public static void m1() {
+        m2();
+        System.out.println("m1");
+    }
+    
+    public static void m2() {
+        Test6.m3();
+        System.out.println("m2");
+    }
+    
+    public static void m3() {
+        System.out.println("m3");
+    }
+    
+    public static void main(String[] args) {
+        m1();
+    }
+}
+    // Answer: m3 m2 m1 - Static method of a class can invoke other static methods. As all the methods are in same class hence using <class_name> and dot operator is not compulsory. But if used no issues as well. Hence both the calls: m2(); and Test6.m3(); will execute successfully.
+
+// When does a class get the default constructor?
+    // Answer: if the class does not define any constructors explicity - Default constructor (which is no-argument constructor) is added by Java compiler, only if there are no constructors in the class.
+
+// What will be the result of compiling and executing the following program?
+
+public class Wall {
+    public static void main(String args[]) {
+        double area = 7.5;
+        String color;
+        if (area < 5)
+            color = "green";
+        
+        System.out.println(color);
+    }
+}
+    // Answer: Compliation error - color is LOCAL variable and it must be initialized before it can be used. As area is not complie time constant, java compiler doesn't have an idea of the value of variable area. There is no else block available as well. So compiler cannot be sure of whether variable color will be initialized or not. So it gives compilation error at System.out.println(color);
+
+// For the class Mango, which option, if used to replace /* INSERT CODE HERE */, will print GREEN on to the console?
+
+public class Mango {
+    public String color;
+    
+    public Mango(String color) {
+        /* INSERT CODE HERE */
+    }
+    
+    public static void main(String [] args) {
+        Mango mango = new Mango("GREEN");
+        System.out.println(mango.color);
+    }
+}
+    // Answer: this.color = color; Instance variable color is shadowed by the parameter variable color of parameterized constructor. So, color = color will have no effect, because short hand notation within constructor body will always refer to LOCAL variable. To refer to instance variable, this reference is needed. Hence Option B is correct. 'color = GREEN;' and 'this.color = GREEN;' causes compilation error as GREEN is not within double quotes(""). NOTE: 'color = "GREEN";' will only assign 'GREEN' to local variable and not instance variable but 'this.color = "GREEN";' will assign 'GREEN' to instance variable.
+
+// What will be the result of compiling and executing TestStudent.java file?
+
+//TestStudent.java
+class Student {
+    String name;
+    int age;
+    boolean result;
+    double height;
+}
+ 
+public class TestStudent {
+    public static void main(String[] args) {
+        Student stud = new Student();
+        System.out.println(stud.name + stud.height + stud.result + stud.age);
+    }
+}
+    // Answer: name, height, result and age are instance variables of Student class. And instance variables are initialized to their respective default values. name is initialized to null, age to 0, result to false and height to 0.0. Statement System.out.println(stud.name + stud.height + stud.result + stud.age); prints null0.0false0
+
+// this keyword in java refers to:
+    // Answer: Variable this in java refers to currently executing object.
+
+// Given:
+
+public class Initializer {
+    static int a = 10000;
+ 
+    static {
+        --a;
+    }
+ 
+    {
+        ++a;
+    }
+ 
+    public static void main(String[] args) {
+        System.out.println(a);
+    }
+}
+// What is the result?
+    // Answer: 9999- We can write statements inside initialization blocks, variable 'a' is of static type so both static and instance initialization blocks can access it.We have not created instance of Initializer class, so instance initialization block is not executed.Execution of static initialization block decrements the value of 'a' by 1. Hence the output is 9999.
+
+// What will be the result of compiling and executing  following program?
+
+public class Test7 {
+    public static void main(String[] args) {
+        double price = 5000;
+        String model;
+        if(price > 5000) {
+            model = "A001";
+        } else if(price <= 5000) {
+            model = "A002";
+        }
+        System.out.println(model);
+    }
+}
+    // Answer: In this case we have used "if - else if" block and not "if - else" block. Value of price variable is not known to the compiler as variable price is not compile-time constant. So, Java Compiler is not sure whether variable model will be initialized or not. Use of LOCAL variable without initialization gives compilation error. Hence, System.out.println(model); gives compilation error.
+
+// Following statement in a Java program compiles successfully:
+
+student.report(course); 
+
+// What can you say for sure?
+    // Answer:  report is a method name - Syntax to invoke static method is: Class_Name.method_name(<arguments>); OR reference_variable_name.method_name(<arguments>); Syntax to invoke instance method is: reference_variable_name.method_name(<arguments>); If student represents class_name or refernce_variable_name, then report might be the static method of the class. If student represents reference_variable_name, then report is the instance method of the class. In both the cases, report must be the method name. Hence, this is correct.
+
+// How can you force JVM to run Garbage Collector?
+    // Answer: This is correct, as Garbage Collection cannot be forced.
+
+// Given the code:
+
+public class A {
+    public static void main(String[] args) {
+        A a1 = new A(); //Line 1
+        A a2 = new A(); //Line 2
+        a1 = a2; //Line 3
+        a1 = null; //Line 4
+    }
+}
+//When is the A object, created at Line 1 eligible for Garbage Collection?
+    // Answer: At Line 3, a1 starts referring to the object referred by a2(Created at Line 2). So, after Line 3, object created at Line 1 becomes unreachable and thus eligible for Garbage Collection.
+
+// How many objects of B class are eligible for Garbage Collection at Line 4?
+
+class B {
+    
+}
+ 
+public class TestB {
+    public static void main(String[] args) {
+        new B(); //Line 1
+        B b2 = new B(); // Line 2
+        change(b2); //Line 3
+        System.out.println("About to end."); //Line 4
+    }
+    
+    public static void change(B b) { //Line 5
+        b = new B(); //Line 6
+    }
+}
+    // Answer: Object created at Line 1 becomes eligible for Garbage collection after Line 1 only, as there are no references to it. So We have one object marked for GC. Object created at Line 6 becomes unreachable after change(B) method pops out of the STACK, and this happens after Line 3. So at Line 4, we have two B objects eligible for Garbage collection: Created at Line 1 and Created at Line 6.
