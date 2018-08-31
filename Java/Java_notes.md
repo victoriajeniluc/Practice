@@ -1357,8 +1357,29 @@
           int i2 = 30; - KNOWN AS A SHADOWING OFF AN INSTANCE VARIABLE 
       }
 
-    }    
+    } 
 
+* INITIALIZATION BLOCKS 
+
+ * static initialization block: where when it is invoked only once class template is loaded in the memory
+
+  * SYNTAX:  
+    static {
+        SecureRandom random = new SecureRandom();
+        int temp  = random.nextInt(10);
+        y = temp;
+    }
+
+  * instance initialization block: is executed everytime a new keyword is used for instance of a class to be created
+
+    * SYNTAX: 
+
+    {
+        x = 50;
+    }   
+
+* WHY ARE INITIALIZATION BLOCKS NEEDED: 
+  * In Java, constructors can be overloaded where we can have multiple of constructors and sometimes ther eare some statemets which needs to be be executed in all the constructors ... instead of copying the statement in all the constructors, it is easier to provide statements in one place like the instance initialization block 
 ----------------------------------------
 
 ## Files in Program 
