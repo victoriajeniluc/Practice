@@ -1393,6 +1393,14 @@
     * Java will throw a java.lang.OutofMemoryError 
   * [EXAMPLE OF GARBAGE COLLECTION](GarbageCollection.png)
 
+**ENCAPSALATION** 
+
+  * A database is a collection of inforamtion organized in such a way that the user can easily find the desired information. Most databases contain multiple of tables and each table may include several fields. If the person accidentally typed in the wrong age... for the Student example in lecture14 of OOP.... it would create an new object or item in the database
+
+  * The practice of making instance variables private and exposing the variables for reading and writing using GET AND SET methods are known as *encapsulation* 
+
+  **TAKE A LOOK AT LECTURE14 TESTSTUDENT.JAVA AND STUDENT.JAVA TO GET A GOOD LOOK AT WHAT ENCAPSULATION DOES**
+
 ----------------------------------------
 
 ## Files in Program 
@@ -1419,5 +1427,5 @@
 * ctrl + shift + / will make it into a comment the highlighting part of the code
 * shift + control + r runs the program  you are currently working on
 * ctrl + 6 + v will pull up the VCS control popup  
-* command + n will help generate a constructor for you 
+* command + n will help generate a constructor, getter/setter for you 
 * shift + command + up / down arrow allows you to move the line of code 
