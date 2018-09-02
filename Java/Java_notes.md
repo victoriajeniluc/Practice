@@ -1473,8 +1473,29 @@
         - no-arg constructor of B
         - main method - ends program 
 
+  **EVERY CLASS HAS *OBJECT* AS A SUPERCLASS. ALL OBJECTS, INCLUDING ARRAYS, IMPLEMENT THE METHODS OF THIS CLASS** 
+    * Inheriting it will basically allow accessiblilty to that class's methods 
 
+    *STRING CLASS*  - example from lecture19 from Point example
+      - why do we get the text we need than a bunch of words and @ signs when we call the variable? 
+        - java.lang.String class overrides toString() method in the Object class, and hence we get text in the output
+    *toString method override* 
+      - you can make meaningful outputs by doing this in the class: 
 
+      @Override
+      public String toString() { //toString() method is overridden to show meaningful output in the Console, when object is passed in System.out.println statement.
+      
+      String str = "Point: (" + this.x + ", " + this.y + ")";
+      
+      return str;
+      }
+        - BUT THIS ONLY RETURNS BACK THE CURRENT OBJECT - this() - YOU SPEAK OF since toString's body method returns back this()
+
+  * multiple inheritance is not allowed; one class can only extend from one class; multilevel inheritance is allowed though
+    - EXAMPLE FROM LECTURE19 from parent, child, subchild
+    - [this picture](multilevelinheritance1.png) will show the multilevel inheritance
+    - [this picture](hierarchyinheritance.png) where it has multiple children but the children only have one parent. 
+      - if there is a grandchild... it can only extend from one of the children of the parent OTHERWISE it will have an issue of the [diamond of death](diamondofdeath.png) - which is not allowed in java 
 ----------------------------------------
 
 ## Files in Program 
