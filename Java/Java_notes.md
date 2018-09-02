@@ -1475,7 +1475,10 @@
         - no-arg constructor of A 
         - instance initialization block of B
         - no-arg constructor of B
-        - main method - ends program 
+        - main method - ends program
+         
+  * HOW TO CALL A CONSTRUCTOR BY PASSING ARGUMENTS FROM THE SUB CLASS - example from lecture21 with gymmbership and discount: 
+    EX: super(name, duration, monthlyFee); //Calling constructor of parent class
 
   **EVERY CLASS HAS *OBJECT* AS A SUPERCLASS. ALL OBJECTS, INCLUDING ARRAYS, IMPLEMENT THE METHODS OF THIS CLASS** 
     * Inheriting it will basically allow accessiblilty to that class's methods 
@@ -1505,6 +1508,7 @@
     * to inherit from the super class but not override it... use the word **FINAL** in the super class method - not the class declaration - and take out  / comment out the method that in the sub class you want to inherit but not override - example in lecture20 sub and super 
     * final classes that are allowed: object, integer, etc... just basically showing to the user that these classes can not be modified
     * local variables can be marked final only! we can not use static, private, protected, public with local variables 
+
 ----------------------------------------
 
 ## Files in Program 
