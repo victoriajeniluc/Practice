@@ -1457,6 +1457,24 @@
   * STATIC METHODS AND FIELDS ... THEY ARE NOT OVERRIDEN 
   * ONLY THE INSTANCES OF THE PARENT CLASS ARE OVERRIDEN BY THE INSTANCE CLASS 
 
+  * CONSTRUCTORS WITH INHERITANCE 
+    * when the sub class has a default constructor... the compiler automatically calls super on that and it will implement the super class's constructor - example from lecture18 with A and B classes
+    * constructors are not overriden.. they are basically just chained!
+    * sometimes the super class has a defined parametized constructor.. and when the default constructor is created for the sub class... it will run into an error if super is called since there is no default constructor in the super class - example in lecture 18 A2 and B2 example - SO CALL SUPER WITH NEGATIVE ONE *-1* TO INVOKE THE PARAMETERIZED CONSTRUCTOR IN THE SUPER CLASS 
+    * lecture 18 A3 and B3 are for initialization blocks 
+      * Order of what is getting invoked: 
+        - static initialization block of A 
+        - static initialization block of B
+        - main method 
+        - super 
+        - instance initialization block of A 
+        - no-arg constructor of A 
+        - instance initialization block of B
+        - no-arg constructor of B
+        - main method - ends program 
+
+
+
 ----------------------------------------
 
 ## Files in Program 
