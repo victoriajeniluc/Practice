@@ -1453,6 +1453,10 @@
       * Java annotation provides meta data from the java code. Annotations are added in JDK 5 and starts with a @ 
       * will have an issue with setting doing this override - so use the SUPER KEYWORD 
 
+  * INSTANCE VARIABLES ARE HIDDEN AND NOT OVERRIDEN BY THE SAME BEHAVIOR 
+  * STATIC METHODS AND FIELDS ... THEY ARE NOT OVERRIDEN 
+  * ONLY THE INSTANCES OF THE PARENT CLASS ARE OVERRIDEN BY THE INSTANCE CLASS 
+
 ----------------------------------------
 
 ## Files in Program 
