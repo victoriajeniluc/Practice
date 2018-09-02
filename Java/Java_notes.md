@@ -1413,6 +1413,10 @@
       - is accessible in the defining class 
       - is accessble in other classes defined in the same package as the defining class .. BUT NOT DIFFERENT PACKAGE 
     4. protected - SIGN: #
+      - only able to be accessible under inheritance ... not outside packages OR instances 
+      - only accessible in the same package as the defining class
+
+    * final - abstract etc - non-access modifier in java  
 
   * top level Java class can have two access modifier: public and default 
 
@@ -1496,6 +1500,11 @@
     - [this picture](multilevelinheritance1.png) will show the multilevel inheritance
     - [this picture](hierarchyinheritance.png) where it has multiple children but the children only have one parent. 
       - if there is a grandchild... it can only extend from one of the children of the parent OTHERWISE it will have an issue of the [diamond of death](diamondofdeath.png) - which is not allowed in java 
+
+  * FINAL 
+    * to inherit from the super class but not override it... use the word **FINAL** in the super class method - not the class declaration - and take out  / comment out the method that in the sub class you want to inherit but not override - example in lecture20 sub and super 
+    * final classes that are allowed: object, integer, etc... just basically showing to the user that these classes can not be modified
+    * local variables can be marked final only! we can not use static, private, protected, public with local variables 
 ----------------------------------------
 
 ## Files in Program 
