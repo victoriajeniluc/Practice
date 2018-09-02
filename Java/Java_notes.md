@@ -1403,16 +1403,16 @@
 
 * Access modifiers - Access Specifiers 
   * 4 types o modifiers available in Java:
-    1. public 
+    1. public - SIGN: + 
      - If Point class is public: it is accessible within defining class.
      - If Point class of com.vikky.lecture15.Point is public then it can also be accessed by other packages - within the same package and different ones 
-    2. private - MOST RESTRICTIVE 
+    2. private - MOST RESTRICTIVE - SIGN: - 
      - no issues accessing private members in the defining class
      - ISSUES with another class in the same package or different package can not access the private members
-    3. default - don't specify any modifier
+    3. default - don't specify any modifier - SIGN: ~
       - is accessible in the defining class 
       - is accessble in other classes defined in the same package as the defining class .. BUT NOT DIFFERENT PACKAGE 
-    4. protected 
+    4. protected - SIGN: #
 
   * top level Java class can have two access modifier: public and default 
 
@@ -1421,7 +1421,31 @@
   * Inner class 
     * class defined within another class
 
+**INHERITENCE**
+  * UML - Unified Modeling Language
+    * a language to represent the model of the system and one of the diagrams used in UML is class diagram
+      * Class diagram - (classdiagram.png)
+        * It has a section for class name, states, and behaviors 
 
+  * 'class B extends A' (classdiagram.png)
+    * this is showing that B is inheriting all the traits of class A.
+    * an arrow pointing from class B's diagram shows the extension 
+    * the picture (runtimebextendsa.png) shows what happens with inheritence during runtime 
+
+  * OTHER WAYS OF SAYING FOR class B extends A 
+    * class B is derived from class A 
+    * class B inherits class A
+    *** BUT THE ONLY THING THAT WORKS FOR A CLASS AND NO ERRORS iN THE FILE IS class B extends A
+
+  * So the example of A and B.. the naming of what A and B are: 
+    * A is called *Super* class 
+    * B is called *Sub* class
+    OR 
+    * A is called *Parent* class 
+    * B is called *Child* class 
+    OR 
+    * A is called *Base* class
+    * B is called *Derived* class 
 ----------------------------------------
 
 ## Files in Program 
