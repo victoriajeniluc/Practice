@@ -1446,6 +1446,13 @@
     OR 
     * A is called *Base* class
     * B is called *Derived* class 
+
+  * WHEN INHERITANCE IS HAPPENING... BUT CLASSES HAVE THE SAME METHOD NAME OR PROPERTY NAME:
+    * it will run the method from that class first then the class it is inheriting from. though any values passed from the inheritance will be lost and will be presented by a default value. check out the picture from [this pic](awkwardmomentbetweenaandb.png) 
+    * to solve it... write the override annotation 
+      * Java annotation provides meta data from the java code. Annotations are added in JDK 5 and starts with a @ 
+      * will have an issue with setting doing this override - so use the SUPER KEYWORD 
+
 ----------------------------------------
 
 ## Files in Program 
