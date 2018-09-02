@@ -1401,6 +1401,27 @@
 
   **TAKE A LOOK AT LECTURE14 TESTSTUDENT.JAVA AND STUDENT.JAVA TO GET A GOOD LOOK AT WHAT ENCAPSULATION DOES**
 
+* Access modifiers - Access Specifiers 
+  * 4 types o modifiers available in Java:
+    1. public 
+     - If Point class is public: it is accessible within defining class.
+     - If Point class of com.vikky.lecture15.Point is public then it can also be accessed by other packages - within the same package and different ones 
+    2. private - MOST RESTRICTIVE 
+     - no issues accessing private members in the defining class
+     - ISSUES with another class in the same package or different package can not access the private members
+    3. default - don't specify any modifier
+      - is accessible in the defining class 
+      - is accessble in other classes defined in the same package as the defining class .. BUT NOT DIFFERENT PACKAGE 
+    4. protected 
+
+  * top level Java class can have two access modifier: public and default 
+
+  * Variables, constructors, and mehthods can have all four access modifiers 
+
+  * Inner class 
+    * class defined within another class
+
+
 ----------------------------------------
 
 ## Files in Program 
