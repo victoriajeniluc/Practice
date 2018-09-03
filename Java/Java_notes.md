@@ -1612,9 +1612,67 @@ SportsCar Convertible
 
     OR 
 
-    * interfaces
-      * for horse, rabbit, and camel which are examples of lecture29 where there is a diagram of how each are related to one another[animalrelation](animalrelation.png)
-      * classes can implement from multiple interfaces! 
+* INTERFACES 
+    * for horse, rabbit, and camel which are examples of lecture29 where there is a diagram of how each are related to one another[animalrelation](animalrelation.png)
+    
+    * classes can implement from multiple interfaces! 
+
+    * NAMING: include -able at the end:
+      Ex: 
+      - sellable 
+      - rideable 
+      - closeable 
+
+    * only allows public as the access specifier ... class also needs to have the same method being override to be the same specifier which is public to be error free 
+
+    * follows the overriding rules! 
+
+    * can have variables - but no initialization / constructors 
+
+    *Marker Interface* 
+      * an empty interface in Java with no fields or methods 
+        * Example Marker.java in lecture 29
+      * Ex: Serializable & RandomAccess
+
+    *Functional Interface* 
+      * an interface with exactly one abstract method 
+      * @FunctionalInterface annotation is used to mark an interface as Functional interface - once this is added.. you can no longer add other abstract methods to that file 
+
+  * Interfaces can extend from other interfaces! 
+    * if one interface extends from another and you create a class that models after that interface... the methods in that class needs to come from all the classes that interface is extending from. 
+      * Ex: 
+
+        public interface I3 extends I1, I2 {
+          void m2(); // it's own abstract method 
+        }
+
+        public interface I2 {
+          // a marker interface
+        }
+
+        public interface I1 {
+          void m1(); // functional interface 
+        }
+
+        public class C implements I3 {
+
+          @Override 
+          public void m1() {
+            // from Interface I1 
+          }
+
+          @Override 
+          public void m2() {
+            // from interface I3
+          }
+
+          // no abstract method from I2 so nothing shows up
+        }
+
+  * SIMILARITIES OF ABSTRACT CLASS AND INTERFACES 
+    1. can not be created using the new keyword 
+
+
 ----------------------------------------
 
 ## Files in Program 
