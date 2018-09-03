@@ -1672,6 +1672,54 @@ SportsCar Convertible
   * SIMILARITIES OF ABSTRACT CLASS AND INTERFACES 
     1. can not be created using the new keyword 
 
+* Association 
+  * HAS - A
+    - relationship is based on usage, rather than inheritance. In other words, class A HAS-A B if code in class A has a reference of class B
+      Ex1: 
+        class B {...}
+        class A {
+          private B obj; 
+        }
+
+      Ex2: A Dog IS-AN animal. A Dog HAS-A collar. 
+        class Collar{}
+        class Animal{}
+        class Dog extends Animal {
+          private Collar myCollar; 
+        }
+        * represented by a filled in arrow when it is inheritance when it comes to diagrams
+        * represented by a empty arrow head when it is a has - a relationship when it comes to diagrams 
+
+      Ex3: Library HAS-A Book 
+        class Book {...}
+        public class Library {
+          public void issueBook(Book book) {...}
+        }
+
+      - 2 types of Association: 
+        1. Aggregation 
+          * means weak association. This relationship a child can exist without parent as well 
+            Ex: Class has Students. Delete the Class and Student exists
+            Ex: Wallet has money. Money has meaning without wallet as well 
+            Ex: Library has books. Books can still exist without the library 
+          * represented by a hollow diamond with an arrow when it comes to diagrams 
+
+        2. Composition 
+          * means strong association where the child cannot exist without the parent 
+            Ex: Human has heart. If the human dies, heart is of no use as well.
+            Ex: Flat has a Kitchen. If flat is destroyed, the kitchen is destroyed as well. 
+            Ex: Invoice has order numbers 
+          * represented by a filled in diamond with an arrow when it comes to diagrams 
+
+* Abstraction 
+  - processing of creating a model of system by reducing / hiding / separation / layering details [pictureofabstraction](abstraction.png)
+    Steps: 
+      1. include all necessary properties and behaviors of the object 
+        Ex: A person has medical history, hobbies, personal details, educational details, financial details 
+        BUT you don't need all the details... so you end up elimating details that may not be needed when you are building a system. For example a library membership where the member's properties would be name, address, phone number, email but not need hobbies or highest earning degree 
+      2. encapsulation where you provide the public getters / setters to work with internal and private varibles - this is where you hide all the private info needed 
+      3. polymorphism in which supertype reference variable is used to refer to an instance variable  - EXAMPLE FOR LECTURE 30 with I SORT where you use different ways of creating the same implementation of sorting 
+      4. inheritance allows to have a relationship between each class in a hierarchy matter - it allows to define the common properties without each class 
 
 ----------------------------------------
 
