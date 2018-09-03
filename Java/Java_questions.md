@@ -63,3 +63,4 @@
 47. Importance of interfaces? What are they? How to create one in IntelliJ? and why the explict casting? Find out how to pass specific arguments for interfaces than hard coding them! What are the variables that interfaces can have? Why use marker interfaces like RandomAccess or Serializable? Why use functional interfaces? Why would interfaces need to be extended from another? 
 48. What are the @ signs for?? Tagging? like @param or @FunctionalInterface? 
 49. Why did I get an error when I tried tagging @FunctionalInterface on I3 in lecture29? Error: Multiple non-overriding abstract methods found in interface
+50. importance of abstraction? 

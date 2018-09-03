@@ -1712,8 +1712,8 @@ SportsCar Convertible
           * represented by a filled in diamond with an arrow when it comes to diagrams 
 
 * Abstraction 
-  - processing of creating a model of system by reducing / hiding / separation / layering details [pictureofabstraction](abstraction.png)
-    Steps: 
+  - CONCEPT processing of creating a model of system by reducing / hiding / separation / layering details [pictureofabstraction](abstraction.png)
+    Things that are needed for abstraction: 
       1. include all necessary properties and behaviors of the object 
         Ex: A person has medical history, hobbies, personal details, educational details, financial details 
         BUT you don't need all the details... so you end up elimating details that may not be needed when you are building a system. For example a library membership where the member's properties would be name, address, phone number, email but not need hobbies or highest earning degree 
