@@ -1529,9 +1529,48 @@
             * public void m1(Object obj){...}
         * [Example of inheritance with polymorphism](polymorphism1.png)
           * if the child class has the same method as the parent class... you do not need to redefine the same method in the diagram -that might be a reason why the child diagram is the same as the parent diagram
-          
-    2. Dynamic 
 
+    2. Dynamic 
+      * An example of how the top layer - object - can refer to to the sub class of chid 
+        Ex: 
+        //Case 1 EXPLICIT CASTING: obj1 is referring to an instance of Child class.
+        
+        Object obj1 = (Object) new Child();
+           //Implicit Casting, Compiler adds casting to Object type, if not provided.
+
+        //Case 2 IMPLICIT CASTING: obj1 is referring to an instance of Object class.
+        
+        Object obj1 = new Object();
+
+      * SIBLINGS CANT CAST ON EACH OTHER - refer to the dog, cat example 
+
+  * IS-A or IS-AN relationship: 
+    Object 
+      | 
+    Vehicle 
+      | 
+     Car 
+    /     \
+SportsCar Convertible 
+    * SportsCar is a SportsCar 
+    * SportsCar is a Car 
+    * SportsCar is a Vehicle 
+    * SportsCar is an Object 
+    * Car is a Vehicle 
+    * Car is an Object 
+    * Vehicle is an Oject 
+    * All Cars are not SportsCars 
+
+    Example: 
+      Object obj = new Car(); 
+      obj instanceof Car - true 
+      obj instanceof Vehicle - true 
+      obj instanceof Object - true 
+      obj instanceof SportsCar - false 
+
+  * equals() method: 
+    - in our example, we overridded the equal method so it makes sense in our example of comparing the values and not the objects that were created at memory time 
+    
 
 ----------------------------------------
 

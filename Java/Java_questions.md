@@ -52,3 +52,7 @@
 36. Understand what is instance variables shadowing a little more... especially the setCounter thing .... where it was suppose to be 11 but not 1. 
 37. Local variables Test - lecture 11 in localtest.java... why does this allow us to access the int i without the final keyword? for test 4? 
 38. Definition for encapsulation 
+39. What is the risks of doing implicit or explicit casting with polymorphism and inheritance? 
+40. Find the differnce between static and dynamic casting? 
+41. Look more into reference overloading 
+42. what is '==' really comparing vs. equals() 
