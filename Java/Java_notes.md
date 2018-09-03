@@ -1607,6 +1607,14 @@ SportsCar Convertible
 
   **MAIN PURPOSE OF HAVING ABSTRACT IS BEING ABLE TO INHERIT FROM OTHER CLASSES THAT ARE OUTSIDE OF THE FILE... and keeping it *PRIVATE/FINAL/STATIC* won't allow the class to do that ... that's why its never *PRIVATE/FINAL/STATIC*** 
 
+  * When abstract is not enough? 
+    * you will have to make extra conditionals like how I did for the animaltest for checkanimal method with the if-else if-else 
+
+    OR 
+
+    * interfaces
+      * for horse, rabbit, and camel which are examples of lecture29 where there is a diagram of how each are related to one another[animalrelation](animalrelation.png)
+      * classes can implement from multiple interfaces! 
 ----------------------------------------
 
 ## Files in Program 
