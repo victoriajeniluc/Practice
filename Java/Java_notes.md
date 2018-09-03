@@ -1570,7 +1570,42 @@ SportsCar Convertible
 
   * equals() method: 
     - in our example, we overridded the equal method so it makes sense in our example of comparing the values and not the objects that were created at memory time 
+
+  * Overriding rules 
+      - example with lecture 27 with overriddingrules.java
+    1. The parent class method must be accessible in the child class to be overridden 
+    2. The argument list in overriding method must exactly match that of the overridden method 
+    3. If parent class method returns primitive type, then return type must be the same in overriding method 
+      3.2. If parent class method returns reference type, then overriding method must either return the same type or subtype 
+    4. Access modifier in overriding method cannot be more restrictive [picture of the most restrictive](overridingrules.png)
+
+* PRIMITIVES ARRAYS VS. REFERENCE ARRAYS
+  * primitive arrays such as int, byte.. might not be able to convert easily from byte to int because they are not a mutlilevel inheritence
+  * reference arrays such as object and strings are allowed to convert string to object because they are within the multilevel inheritance 
+  * Summary: when it is a primitive array, it may be difficult to change the data type of the array once it is set compared to a reference array 
+
+* ABSTRACT KEYWORD 
+  * how to declare a method but not define it ... in order to allow supertype reference to an instance variable subtype
     
+    public abstract void operate();
+
+  * BUT IF YOU DECLARE A METHOD THAT IS ABSTRACT... you must declare the class that way too. 
+
+  * as abstract class cannot be instantiated.
+
+* IMPORTANT THINGS TO KNOW ABOUT ABSTRACT: 
+   * 1. A class in Java can be declared abstract even if it doesn't have even a single abstract method.
+   * 2. If a class has even one abstract method, then class must be abstract.
+   * 3. Constructor of an abstract class cannot be invoked using new keyword but it is invoked by using super().
+   * 4. If a subclass doesn't implement/override abstract method of superclass, then it must be declared as abstract.
+   * 5. Implementing method must follow all the overriding rules.
+   * 6. A method cannot be declared both: private & abstract, final & abstract and static & abstract.
+
+  **SUBCLASS IMPLEMENTING ABSTRACT METHOD OF SUPERCLASS IS SAME AS A MATTER OF OVERWRITING - SO ALL THE OVERRIDING RULES ARE FOLLOWED** 
+
+  * Most common access specifiers for abstract classes / constructors / methods are protected and public - which are the two least strict specifiers
+
+  **MAIN PURPOSE OF HAVING ABSTRACT IS BEING ABLE TO INHERIT FROM OTHER CLASSES THAT ARE OUTSIDE OF THE FILE... and keeping it *PRIVATE/FINAL/STATIC* won't allow the class to do that ... that's why its never *PRIVATE/FINAL/STATIC*** 
 
 ----------------------------------------
 

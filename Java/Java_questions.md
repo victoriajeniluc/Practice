@@ -56,3 +56,7 @@
 40. Find the differnce between static and dynamic casting? 
 41. Look more into reference overloading 
 42. what is '==' really comparing vs. equals() 
+43. Covairant return.. look up what that is
+44. Maybe play around with reference arrays vs. primitive arrays 
+45. WHY can't we just use instance variables? like whats the purpose of dynamic polymorphism....  where we have to have the supertype reference the subtype 
+46. Importance of abstract classes? methods? 
