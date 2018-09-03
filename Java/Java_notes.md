@@ -1509,6 +1509,30 @@
     * final classes that are allowed: object, integer, etc... just basically showing to the user that these classes can not be modified
     * local variables can be marked final only! we can not use static, private, protected, public with local variables 
 
+**POLYMORPHISM**
+  * Poly - many + Morphs - forms 
+  * 2 types of Polymorphism: 
+    1. Static 
+      * Polymorphism happening at a compile time - when the compiler knows what happens at the time... ex: if the plus operator is adding or stringing strings together OR what method to use even with the same name but different arguments 
+        * Operator Overloading
+          * '+' operator that is used for addition as well as concatenation 
+        * Constructor Overloading 
+          * Multiple constructors 
+            - public Point(){...}
+            - public Point(int x){...}
+            - public Point(int x, int y){...}
+        * Method Overloading 
+          * Methods with the same name but different parameter list 
+            * public void m1(){...}
+            * public int m1(int i){...}
+            * private void m1(int x, int y){...}
+            * public void m1(Object obj){...}
+        * [Example of inheritance with polymorphism](polymorphism1.png)
+          * if the child class has the same method as the parent class... you do not need to redefine the same method in the diagram -that might be a reason why the child diagram is the same as the parent diagram
+          
+    2. Dynamic 
+
+
 ----------------------------------------
 
 ## Files in Program 
