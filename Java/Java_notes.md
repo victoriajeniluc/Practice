@@ -1739,6 +1739,9 @@ SportsCar Convertible
 * you can have a lot of white space in side the if-else blocks.. it will still be ran - it won't throw an error 
 * Examples of things we can do with the String class and the SecureRandom class - in the miscellanos project 
 * you got to make sure the data type is able to work with all the methods when you method chaining 
+* CAMEL HUMP... when you do command + O to find the class.. you can type the initials in capital letters to find the class - if it is a long name 
+* TODOs: are basically tasks that needs to still be completed. When you make a comment for TODO.. it puts a placeholder for you to go back to it on the list on the bottom of the intellij program - next to the terminal 
+* shift + command + t creates a test for that method 
 
 ## SHORTCUT 
 * sout + tab will type out System.out.println("Hello World");
@@ -1749,3 +1752,9 @@ SportsCar Convertible
 * ctrl + 6 + v will pull up the VCS control popup  
 * command + n will help generate a constructor, getter/setter for you 
 * shift + command + up / down arrow allows you to move the line of code 
+* ctrl + h shows the hierarchy of the class 
+* command + o finds the class 
+* option + command + o finds the method
+* command + e will show the most recent files 
+* alt + enter will create the method you need for your test 
+* alt + command + f creates your varibles in your test to be field declaration 
