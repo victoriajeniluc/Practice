@@ -1086,3 +1086,296 @@ public class TestB {
     }
 }
     // Answer: Object created at Line 1 becomes eligible for Garbage collection after Line 1 only, as there are no references to it. So We have one object marked for GC. Object created at Line 6 becomes unreachable after change(B) method pops out of the STACK, and this happens after Line 3. So at Line 4, we have two B objects eligible for Garbage collection: Created at Line 1 and Created at Line 6.
+
+//Choose the options that meets the following specification: Create a well encapsulated class Phone with one instance variable model. The value of model should be accessible and modifiable outside Phone.
+    // ANSWER: 
+        // public class Phone { 
+        //     private String model; 
+        //     public String getModel() {
+        //         return model;
+        //     }
+
+        //     public void setModel(String val) {
+        //         model = val; 
+        //     }
+        // }
+
+// Super keyword in Java is used to: 
+    //Answer: super refers to parent class object and this refers to currently executing object.
+
+// Consider the following class:
+
+    public class Employee {
+        public int passportNo; //line 2
+    }
+// Which of the following is the correct way to make the variable 'passportNo' read only for any other class? 
+    // Answer: 'passportNo' should be read-only for any other class. This means make 'passportNo' private and provide public getter method. Don't provide public setter as then 'passportNo' will be read-write property.
+
+// Predict Output, if the below code is run with given command?
+// java Test good morning everyone
+
+    private class Test
+    { 
+       public static void main(String args[])
+       { 
+         System.out.println(args[1]) 
+       }
+    }
+    // Answer: Top level class can have two access modifiers: public and default. Over here Test class has private modifier and hence compilation error.
+
+// What is the output of the following code?
+
+    class A {
+        A() {
+            this(10);
+            System.out.println("A");
+        }
+        
+        A(int i) {
+            System.out.println("B");
+        }
+    }
+     
+    class B extends A {
+        
+    }
+     
+    public class TestAB {
+        public static void main(String[] args) {
+            new B();
+        }
+    }
+    // Answer: Reason: Default constructor added by Java compiler in B class is: B() { super(); } On executing new B(); statement, class B's default constructor is invoked, which invokes no-arg constructor of class A [super();]. no-arg constructor of class A invokes parameterized constructor of class A [this(10);]. B is printed first and after that A is printed.
+
+// What will be the result of compiling and executing following program?
+
+    class Super {
+        public Super(int i) {
+            System.out.println(100);
+        }
+    }
+     
+    class Sub extends Super {
+        public Sub() {
+            System.out.println(200);
+        }
+    }
+     
+    public class TestSuperSub {
+        public static void main(String[] args) {
+            new Sub();
+        }
+    }
+        // Answer: super(); is added by the compiler as the first statement in both the constructors. Class Super extends from Object class and Object class has no-argument constructor, hence no issues with the constructor of Super class. But no-arg constructor is not available in Super class, hence calling super(); from Sub class constructor gives compilation error.
+
+// Every class has ____ as a superclass 
+    // Answer: java.lang.Object class is the root of the class hierarchy.
+
+// What will be the result of compiling and executing following program?
+
+    class Parent {
+        static {
+            System.out.println(10);
+        }
+     
+        {
+            System.out.println(20);
+        }
+     
+        public Parent() {
+            System.out.println(30);
+        }
+    }
+     
+    class Child extends Parent {
+        static {
+            System.out.println(40);
+        }
+     
+        {
+            System.out.println(50);
+        }
+     
+        public Child() {
+            System.out.println(60);
+        }
+    }
+     
+    public class TestParentChild {
+        public static void main(String[] args) {
+            new Child();
+        }
+}
+    // Answer: xCorrect Sequence is: 1. static initialization block of Parent class. (10) 2. static initialization block of Child class. (40) 3. instance initialization block of Parent class. (20) 4. Constructor of Parent class. (30) 5. instance initialization block of Child class. (50) 6. Constructor of Child class. (60)
+
+// Which of these keywords can be used to prevent inheritance of a class?
+    // Answer: Class declared as final can't be inherited. Examples are: String, Integer, System etc.
+
+// What will be the result of compiling and executing following program?
+
+    class Rectangle {
+        private int height;
+        private int width;
+        
+        public Rectangle(int height, int width) {
+            this.height = height;
+            this.width = width;
+        }
+        
+        public int getHeight() {
+            return height;
+        }
+        
+        public int getWidth() {
+            return width;
+        }
+    }
+     
+    public class Test {
+        public static void main(String[] args) {
+            private int i = 10;
+            private int j = 20;
+            Rectangle rect = new Rectangle(i, j);
+            System.out.println(rect.getHeight() + ", " + rect.getWidth());
+        }
+    }
+        // Answer: i and j cannot be declared private as i and j are local variables. Only final modifier can be used with local variables.
+
+// Which of the following statement declares a constant field in Java?
+    // Answer: final static int x = 10; Fields declared with final are constant fields.
+
+//  Two methods are said to be overloaded if they have,
+    // Answer: Methods are said to be overloaded if they have same name and different parameters.
+
+// What will be the result of compiling and executing following program?
+
+//Circus.java
+    class Animal {
+        protected void jump() {
+            System.out.println("Animal");
+        }
+    }
+     
+    class Cat extends Animal {
+        public void jump(int a) {
+            System.out.println("Cat");
+        }
+    }
+     
+    class Deer extends Animal {
+        public void jump() {
+            System.out.println("Deer");
+        }
+    }
+     
+    public class Circus {
+        public static void main(String[] args) {
+            Animal cat = new Cat();
+            Animal deer = new Deer();
+            cat.jump();
+            deer.jump();
+        }
+    }
+    // Answer: Cat class doesnot override the jump() method of Animal class, infact jump(int) method is overloaded in Cat class. Deer class overrides jump() method of Animal class. Reference variable cat is of Animal type, cat.jump() syntax is fine and as Cat doesnot override jump() method hence Animal version is invoked, which prints Animal to the console. Even though reference variable deer is of Animal type but at runtime deer.jump(); invokes overriding method of Deer class, this prints Deer to the console.
+
+// What will be the result of compiling and executing following program?
+
+//TestBaseDerived.java
+    class Base {
+        protected void m1() {
+            System.out.println("Base: m1()");
+        }
+    }
+     
+    class Derived extends Base {
+        void m1() {
+            System.out.println("Derived: m1()");
+        }
+    }
+     
+    public class TestBaseDerived {
+        public static void main(String[] args) {
+            Base b = new Derived();
+            b.m1();
+        }
+    }
+    // Answer: Derived class overrides method m1() of Base class. Access modifier of method m1() in Base class is protected, so overriding method can use protected or public. But overriding method in this case used default modifier and hence we get compilation error.
+
+// Which is not a valid statement based on given code?
+
+    class A{}
+    class B extends A{}
+        // Answer: B b = new A(); -> child class reference cannot refer to parent class object. This will give compilation error. A a = new B(); -> parent class reference can refer to child class object. This is Polymorphism. B a = new B(); -> No issues at all. A a = new A(); -> No issues at all.
+
+// What will be the result of compiling and executing following program?
+//InstanceOfTest.java
+    class M { }
+    class N extends M { }
+    class O extends N { }
+    class P extends O { }
+     
+    public class InstanceOfTest {
+        public static void main(String args []) {
+            M obj = new O();
+            if(obj instanceof M) 
+              System.out.print("M");
+            if(obj instanceof N) 
+              System.out.print("N");
+            if(obj instanceof O) 
+              System.out.print("O");
+            if(obj instanceof P) 
+              System.out.print("P");
+        }
+    }
+        // Answer: M ^ N ^ O [obj referes to instance of O class] ^ P obj instanceof M -> true obj instanceof N -> true obj instanceof O -> true but obj instanceof P -> false
+
+// Which one of these top level classes cannot be sub-classed?
+    // Answer: class Dog {}: can be sub-classed within the same package. abstract class Cat {}: can be sub-classed within the same package. final class Electronics {}: a class with final modifier cannot be subclassed. private class Car {}: a top level class cannot be declared with private modifier.
+
+// What will be the result of compiling and executing following program?
+//Test1.java
+    class Vehicle {
+        public int getRegistrationNumber() {
+            return 1;
+        }
+    }
+     
+    class Car {
+        public int getRegistrationNumber() {
+            return 2;
+        }
+    }
+     
+    public class Test1 {
+        public static void main(String[] args) {
+            Vehicle obj = new Car();
+            System.out.println(obj.getRegistrationNumber());
+        }
+} 
+    // Answer: class Car doesn't extend from Vehicle class, this means Vehicle is not supertype of Car. Hence, Vehicle obj = new Car(); gives compilation error.
+
+// For the given code:
+
+    interface I01 {
+        void m1();
+    }
+     
+    public class Implementer extends Object implements I01{
+        protected void m1() {
+            
+        }
+    }
+// Which of the statement is true?
+    // Answer: As method m1() is implicitly public in I01, hence overriding method in Implementer class should also be public. But it is protected and hence compiler complains.
+
+
+// Given the following definitions of the class Insect and the interface Flyable, the task is to declare a class Mosquito that inherits from the class Insect and implements the interface Flyable.
+//Select the correct option to accomplish this task:
+
+    class Insect {}
+    interface Flyable {}
+    // Answer: class Mosquito extends Insect implements Flyable() {} // A class in Java extends class and implements interface.
+
+
+// Which of these access modifiers can be used for a top level interface?
+    // Answer: A top level interface can be declared with either public or default modifiers. public interface is accessible across all packages but interface declared with default modifier and be accessed in the defining package only.
