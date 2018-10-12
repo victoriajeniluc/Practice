@@ -103,3 +103,19 @@ Example:
 		- Basically going to be the first column is 80% and the rest is auto - or fill up the remaining space 
 		- NOT ADDING UP TO 100% 
 			80% + 20% + 20px == ??? 
+^^^ SO A SOLUTION TO THIS: Fractional units 
+
+##FRACTIONAL UNITS## 
+- new unit to CSS 
+- basically what they are known as "free space"
+
+*CHANGING THE EXAMPLE FROM GRID12 to fractional unnits* 
+	Example: 
+		.grid14{
+			display: grid; 
+			grid-gap: 20px;
+			width: 1000px;
+			border: 10px solid #00ff9b; 
+			grid-template-columns: 8fr 2fr; 
+		}
+		
