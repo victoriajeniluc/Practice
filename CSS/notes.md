@@ -118,4 +118,35 @@ Example:
 			border: 10px solid #00ff9b; 
 			grid-template-columns: 8fr 2fr; 
 		}
-		
+		*meaning: it will take up 8 times of the free space and the other proportion will take up 2 times the free space* 
+
+##HOW DO FR WORK?##
+- The browser will first dedicate space towards the things that need a specific amount of room - exisiting content, fixed sized tracks and grid-gap then... the remaining space will be divided up in proportion - much like flex-grow.
+	Example: 
+		.grid15{
+			display: grid; 
+			width: 100%; 
+			grid-gap: 50px; 
+			grid-template-columns: 2fr 500px 1fr; 
+		}
+
+##THE repeat() FUNCTION## 
+- allows us to repeat the tracks through out the grids 
+- it can be used multiple times 
+	Example: 
+		.grid17{
+			display: grid; 
+			grid-template-columns: repeat(5, 1fr);
+		}
+
+	Example: 
+		.grid18{
+			display: grid;
+			grid-template-colums: repeat(3, 1fr) repeat(2, 2fr)
+		}
+
+	Example:
+		.grid19{
+			display: grid;
+			grid-template-columns: 200px repeat(3, 1fr) 200px; 
+		}
