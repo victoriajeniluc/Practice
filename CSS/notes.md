@@ -100,3 +100,6 @@ Example:
 		border: 10px solid #00ff9b; 
 		grid-template-columns: 80% auto; 
 	}
+		- Basically going to be the first column is 80% and the rest is auto - or fill up the remaining space 
+		- NOT ADDING UP TO 100% 
+			80% + 20% + 20px == ??? 
