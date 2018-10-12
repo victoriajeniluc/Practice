@@ -88,3 +88,15 @@
 			grid-template-columns: 50px 10ch 2rem 1in; 
 			grid-template-rows: 10wh 100px; 
 		}
+			*ch - character height* 
+			*in - inches* 
+
+##PERCENTAGES - fine when used in combination or auto## 
+
+Example: 
+	.grid12 {
+		display: grid; 
+		width: 100%; 
+		border: 10px solid #00ff9b; 
+		grid-template-columns: 80% auto; 
+	}
