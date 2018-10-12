@@ -82,4 +82,9 @@
 
 ##SIZING TRACKS##
 - We can specify the width of the column and the height of the rows with any existing CSS unit 
-
+	Example: 
+		.grid11 {
+			display: grid;
+			grid-template-columns: 50px 10ch 2rem 1in; 
+			grid-template-rows: 10wh 100px; 
+		}
