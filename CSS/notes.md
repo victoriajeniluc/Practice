@@ -150,3 +150,33 @@ Example:
 			display: grid;
 			grid-template-columns: 200px repeat(3, 1fr) 200px; 
 		}
+
+##SIZING - the items inside the grid## 
+- Using a fixed width 
+
+	Example: 
+		.grid20{	
+			display:grid; 
+			grid-template-columns: repeat(5, 1fr);
+		}
+
+		.grid20 .item:nth-child(3){
+			width:300px;
+			background: #00ff9b; 
+		}
+
+		*Problem with this is that once you expand one item... it will expand the others that are within that column* 
+
+- Spilling into rigid tracks 
+	Example: 
+		.grid21{ 
+			display: grid; 
+			grid-template-columns: repeat(5, 100px); 
+		}
+
+		.grid21 .item:nth-child(3){
+			width: 600px; 
+			background: #00ff9b;
+		}
+
+		*Problem with this is that if your item is bigger than the column size, it will spill under the other items within that row* 
