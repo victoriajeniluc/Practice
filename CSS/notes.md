@@ -196,5 +196,28 @@ Example:
 		}
 
 		*Problem with this sometimes is that if the item is too big.. it will push it into the next track, leaving space behind ... example below* 
+			Example: 
+				.grid23{ 
+					display: grid; 
+					grid-template-columns: repeat(5, 100px);
+				}
 
-		
+				.grid23 .item:nth-child(3){
+					grid-column: span 4; 
+					background: #00ff9b;
+				}
+
+##SOLUTION to fixing items from flowing into the next track##
+- grid-auto-flow: dense FIXES THIS 
+
+	Example: 
+		.grid24{ 
+			display: grid;
+			grid-auto-flow: dense;
+			grid-template-columns: repeat(4, 100px);
+		}
+
+		.grid24 .item:nth-child(3){
+			grid-column: span 4;
+			background: #00ff9b;
+		}
