@@ -221,3 +221,39 @@ Example:
 			grid-column: span 4;
 			background: #00ff9b;
 		}
+
+		*Grid-auto-flow:dense will put all the items in the space that it needs.. so if item 1, 2 fit in the track of 100px... it will be in its places. Though, item 3 spans to 4... so it will be placed in the next track. Item 4 that is 100px will be in the same track as 1 and 2. ORDER WILL CHANGE.* 
+
+##LINE NUMBERS##
+- Tracks are numbered by their gutters, not the tracks 
+
+- We can tell an item where to start and/or stop 
+	Example: 
+		.grid25{
+			display: grid; 
+			grid-auto-flow: dense;
+			grid-template-columns: repeat(5, 100px);
+		}
+
+		.grid25 .item:nth-child(3){
+			grid-column: 2/5; 
+			background: #00ff9b;
+		}
+
+		*This is what it means: start at the 2nd track and span until 5* 
+
+- -1 spans to the end of the explicit grid 
+	Example: 
+		.grid26{
+			display: grid; 
+			grid-auto-flow: dense;
+			grid-template-columns: repeat(5, 100px);
+			grid-template-rows: repeat(7, 100px);
+		}
+
+		.grid26 .item:nth-child(3){
+			grid-row: 4/-1
+			background: #00ff9b;
+		}
+
+		*This is what it means: start at the 4th track and span until the end of the grid* 
