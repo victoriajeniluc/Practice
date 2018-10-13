@@ -180,3 +180,21 @@ Example:
 		}
 
 		*Problem with this is that if your item is bigger than the column size, it will spill under the other items within that row* 
+
+##SOLUTION TO SIZING ITEMS##
+- In most cases, the best way to size grid items is to span multiple grid spots 
+
+	Example: 
+		.grid22{
+			display: grid; 
+			grid-template-columns: repeat(5, 100px);
+		}
+
+		.grid22 .item:nth-child(3){
+			grid-column: span 3;
+			background: #00ff9b;
+		}
+
+		*Problem with this sometimes is that if the item is too big.. it will push it into the next track, leaving space behind ... example below* 
+
+		
