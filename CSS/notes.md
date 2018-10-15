@@ -257,3 +257,36 @@ Example:
 		}
 
 		*This is what it means: start at the 4th track and span until the end of the grid* 
+
+- ANOTHER EXAMPLE: 
+	.grid27{
+		display:grid; 
+		grid-template-columns: repeat(5, 100px);
+		grid-template-rows: repeat(7, 100px);
+	}
+
+	.grid27 .header {
+		grid-column: 1/-1; 
+		grid-row: 1; 
+		background:white; 
+	}
+
+##SPECIFY WHERE AN ITEM ENDS##
+Example: 
+	.grid28{
+		display;: grid; 
+		grid-template-columns: repeat(5, 100px);
+		grid-template-rows: repeat(7, 100px);
+	}
+
+	.gid28 .item:nth-child(3){
+		grid-column-end: 5; 
+		grid-column-start: span 3;
+		grid-row-end: -1; 
+		grid-row-start: span 5; 
+		background: #00ff9b;
+	}
+
+*What we did here is... to start at the bottom of the right hand corner of the grid... then span 3.. how many rows.. then span 5. - Basically filling from the bottom to the top of the section* 
+
+#
