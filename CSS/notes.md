@@ -289,4 +289,28 @@ Example:
 
 *What we did here is... to start at the bottom of the right hand corner of the grid... then span 3.. how many rows.. then span 5. - Basically filling from the bottom to the top of the section* 
 
-#
+##AUTO-FIT AND AUTO-FILL##
+Example: Grid with a flexible width and 20px of gap. How many 100px tracks can we fit? 
+PROBLEM OF ANSWERING WITH A NUMBER SPECIFIC: you won't be really sure because it's flexible of a browser and it can fit as many since it expands and shrinks as you changing the sizing of the browser. 3 tracks on a phone compared to a 40in monitor can look very different 
+
+##Solution to this problem##
+- Auto-Fit and Auto-Fill: 
+	- Giving  a specific size of the track.. repeat as many times as you can 
+		Example: 
+			.grid29{
+				display: grid; 
+				grid-template-columns: repeat(auto-fill, 100px);
+				border: 10px solid red; 
+				transition: all 1s; 
+				width: 900px; 
+			}
+
+			.grid:hover{
+				width: 300px;
+			}
+
+##AUTO-FILL VS. AUTO-FIT##
+- Auto-fill 
+	- Will NOT create tracks out of empty space 
+- Auto-fit
+	- will create tracks out of empty space 
