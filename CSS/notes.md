@@ -310,7 +310,14 @@ PROBLEM OF ANSWERING WITH A NUMBER SPECIFIC: you won't be really sure because it
 			}
 
 ##AUTO-FILL VS. AUTO-FIT##
-- Auto-fill 
-	- Will NOT create tracks out of empty space 
-- Auto-fit
+- Auto-fit 
+	- Will NOT create tracks out of empty space  
+- Auto-fill
 	- will create tracks out of empty space 
+	- having a larger grid than the items you have
+- WHICH ONE TO USE? 
+	- Up to the user's preference... sometimes you may want to use auto-fill to be able to create an extra track in case. 
+
+##WHY DO WE USE AUTO-FILL AND AUTO-FIT## 
+- BECAUSE OF MINMAX() 
+	- Takes two arguments, a min and a max 
