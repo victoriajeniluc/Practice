@@ -407,3 +407,42 @@ PROBLEM OF ANSWERING WITH A NUMBER SPECIFIC: you won't be really sure because it
 			grid-row: content-top / content-bottom;
 		}	
 
+##ALIGNMENT AND CENTERING##
+- CSS Grid is amazing for just aligning elements 
+- 6 alignment properties: 
+	- justify -* : for rows axis - horizontal 
+		- how to align the tracks 
+			- justify-content: 
+				- start 
+				- center 
+				- end 
+				- space-between 
+				- space-around 
+		- how to align the items: 
+			- justify-items: 
+				- stretch
+				- center
+				- start
+				- end
+				- self : overrides 
+	- align -# : for columns axis - vertical 
+		- how to align the tracks:
+			- align-content: 
+				- start
+				- center 
+				- stretch 
+				- end 
+				- space-around
+				- space-between 
+		- how to align the items: 
+			- align-items: 
+				- stretch
+				- center 
+				- start 
+				- end 
+				- baseline : will align the text of within the items 
+	Example: 
+		.grid56 {
+			display: grid;
+			grid-template-columns: repeat(3, 100px);
+		}
