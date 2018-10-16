@@ -321,3 +321,31 @@ PROBLEM OF ANSWERING WITH A NUMBER SPECIFIC: you won't be really sure because it
 ##WHY DO WE USE AUTO-FILL AND AUTO-FIT## 
 - BECAUSE OF MINMAX() 
 	- Takes two arguments, a min and a max 
+	Example: 
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		*This is saying.... make this grid repeat as many tracks that have a minimum width of 350px... but if they are bigger than that... use the max of 1fr- could potentially stretch accross the browser*
+	Example: 
+		.grid50{
+			display: grid; 
+			grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+			border: 10px solid red; 
+			overflow: auto; 
+			resize: horizontal;
+		}
+	- ALLOWS THIS TO BE RESPONSIVE WITHOUT MEDIA QUERIES
+	- CONTAINER AWARE - NOT BASED ON VIEWPORT 
+	- HANDY AS HECK - MOST USED PARTS OF GRID 
+
+##GRID TEMPLATE AREAS## 
+- Another way to define where items go is the create areas on your grid and name them 
+	Example: 
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(4, 100px); 
+			grid-template-areas: 
+				'head head head head'
+				'side side main main'
+				'ads ads main main'
+				'foot foot foot foot'
+
+		}
