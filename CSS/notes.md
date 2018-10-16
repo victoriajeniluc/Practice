@@ -338,6 +338,7 @@ PROBLEM OF ANSWERING WITH A NUMBER SPECIFIC: you won't be really sure because it
 
 ##GRID TEMPLATE AREAS## 
 - Another way to define where items go is the create areas on your grid and name them 
+- The grid sets up the template where the items would be the class name of the element 
 	Example: 
 		.grid {
 			display: grid;
@@ -347,5 +348,62 @@ PROBLEM OF ANSWERING WITH A NUMBER SPECIFIC: you won't be really sure because it
 				'side side main main'
 				'ads ads main main'
 				'foot foot foot foot'
-
 		}
+		.header {
+			 grid-area: head;
+		}
+		.side {
+			 grid-area: side;
+		}
+		.main {
+			 grid-area: main;
+		}
+		.ads {
+			grid-area: ads;
+		}
+		.foot { 
+			grid-area: foot; 
+		}
+
+##NAMED LINES##
+- When you name areas, you get named for free 
+	Example: 
+		grid54 {
+			display: grid;
+			grid-template-columns: repeat(4, 200px);
+			grid-auto-row: 200px; 
+			gid-template-areas: 
+				'outter-left content content outter-right'
+				'outter-left content content outter-right'
+				'outter-left content content outter-right'
+				'footer footer footer footer'
+		}
+		.grid54 .item:nth-child(1){
+			grid-column: content-start / content-end; 
+			grid-row: content-start / content-end; 
+			background: green;
+		}
+
+- YOU CAN CREATE YOUR OWN NAMES 
+	Example: 
+		.grid55 {
+			display: grid; 
+			grid-template-columns: 
+				[sidebar-start site-left]
+				1fr
+				[sidebar-end content-start]
+				500px
+				[content-end]
+				1fr
+				[site-right];
+			grid-template-rows:
+				[content-top]		
+				repeat(10, auto)
+				[content-bottom];
+		}
+		.grid55 {
+			background: slateblue;
+			grid-column: content-start; 
+			grid-row: content-top / content-bottom;
+		}	
+
